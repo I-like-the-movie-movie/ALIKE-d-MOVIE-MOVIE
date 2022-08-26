@@ -12,8 +12,8 @@ const App = () => {
 };
 
 const Router = () => {
-  const todos = useSelector(state => state.todos.todos);
-  console.log(todos);
+  // const todos = useSelector(state => state.todos.todos);
+  // console.log(todos);
   return (
     <BrowserRouter>
       <Routes>
