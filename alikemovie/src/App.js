@@ -2,18 +2,16 @@ import React, { useSelector } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 
-const App = () => {
-  return (
-    <div>
-      {' '}
-      <Router />{' '}
-    </div>
-  );
-};
+// const App = () => {
+//   return (
+//     <div>
+//       {' '}
+//       <Router />{' '}
+//     </div>
+//   );
+// };
 
-const Router = () => {
-  const todos = useSelector(state => state.todos.todos);
-  console.log(todos);
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
