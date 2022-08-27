@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import Logo from '../assets/logo.svg';
 // import ModalReview from './Modals/ModalReview';
-import ModalInput from './Modals/ModalInput';
+import ModalInput from './Post';
 import List from './List';
 import styled from 'styled-components';
 import axios from "axios"; 
@@ -47,11 +47,18 @@ const Home = () => {
             지금까지의 영화들
           </button>
 
+          {/* <button type="button" onClick="refreshPage()">Close</button>
+
+function refreshPage(){ window.location.reload() */}
           <form
         onSubmit={(e) => {
-					// 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
-          e.preventDefault();
+          // 버튼 눌렀을때 새로고침
+          // window.location.reload()
+          // 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
+          // e.preventDefault();
           onSubmitHandler(review);
+          //질문: window.location.reload() , e.preventDefault() 쓰나 안쓰나 새로고침이 되는 문제. 차이가 무엇인지.
+          // 질문2: 엔터 온클릭의 차이 (렌러링 범위, 속도)
         }}
       >
         <input

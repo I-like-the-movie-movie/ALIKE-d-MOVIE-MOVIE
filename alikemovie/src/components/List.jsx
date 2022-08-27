@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ModalInput from './Modals/ModalInput';
+import ModalInput from './Post';
 import './List.css';
 
 const List = () => {

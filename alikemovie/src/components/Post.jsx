@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import axios from "axios"; 
 
 
-function ModalInput() {
+function Post() {
 
   const [review, setReview] = useState({
     movie_title: "",
@@ -20,10 +20,12 @@ function ModalInput() {
   const fetchReviews = async () => {
     const { data } = await axios.get("http://localhost:3001/reviews");
     setReviews(data);
+    console.log('bbbb');
   };
 
   const onSubmitHandler = (review) => {
     axios.post("http://localhost:3001/reviews", review);
+    console.log('aaaaa');
   };
 
   useEffect(() => {
@@ -37,12 +39,14 @@ function ModalInput() {
 
   return (
     <form className="Form">
-
+    <div>
 
         <form
         onSubmit={(e) => {
+          console.log('ccc');
 					// 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
           e.preventDefault();
+          console.log(review);
           onSubmitHandler(review);
         }}
       >
@@ -57,9 +61,11 @@ function ModalInput() {
           }}
         />
         <button>추가하기</button>
-
-
-
+        {/* <div>
+        {reviews?.map((review) => (
+          <div key={review.id}>{review.movie_title}</div>
+        ))}
+      </div> */}
       </form>
 
       <div>
@@ -71,9 +77,10 @@ function ModalInput() {
 
 
 
-      {/* </div> */}
-    </form>
+      </div>
+
+   </form>
   );
 }
 
-export default ModalInput;
+export default Post;
