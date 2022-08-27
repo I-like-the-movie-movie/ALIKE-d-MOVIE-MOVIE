@@ -20,13 +20,15 @@ const param = useParams();
   console.log(param.id)
   console.log(typeof param.id)
   console.log(Number(param.id))
-
+  console.log(detailreviews)
+  // axios.get('https://localhost:4000/sendlist/todo', {userId: userId},
 
   const fetchDetailReviews = async () => {
-    const { data } = await axios.get("http://localhost:3001/reviews");
+    const { data } = await axios.get("http://localhost:3001/reviews",{Id:param?.id});
     setDetailReviews(data);
     console.log('bbbb');
     console.log(data);
+    console.log(param.id);
 
   };
   useEffect(() => {
@@ -39,8 +41,10 @@ const param = useParams();
     <div>
       <div>
       pathname : {location.pathname}
-
       </div>
+      {/* <div>
+        detailReviews[{location.pathname}]
+      </div> */}
       {/* <div>
         {detailreviews[Number(param.id)]}
       </div> */}
@@ -49,11 +53,19 @@ const param = useParams();
       
       <div> {detailReview.movie_title} </div>
       ) )}
-      
-      <h1> 영화 리뷰 상세내용 </h1>
+      <div>
+        {detailreviews?.filter(el=> el.id === Number(param.id))?.map((detailReview) =>(
+          <div> 
+            {detailReview.movie_title} 
+            {detailReview.star}
+            {detailReview.content} 
+            {detailReview.picture} 
+          </div>
+          
+          ))}
+      </div>
+
       {/* <div> `${{review.id}}` </div> */}
-      <h1> 글쓴이 </h1>
-      <h1> 재미있어요 </h1>
 
     </div>
   );
