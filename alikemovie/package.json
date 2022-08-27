@@ -10,14 +10,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-<<<<<<< HEAD
     "react-scripts": "^5.0.1",
+    "react-script": "^2.0.5",
     "redux": "^4.2.0",
     "styled-components": "^5.3.5",
-=======
-    "react-script": "^2.0.5",
-    "react-scripts": "5.0.1",
->>>>>>> 9489e7e475f367b01430ccd60f9fe8ef078c4445
     "web-vitals": "^2.1.0"
   },
   "scripts": {
