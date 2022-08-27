@@ -13,7 +13,7 @@
   margin-top: 40px;
 }
 
-.movie_list,
+.now_movie_list,
 .review_list {
   cursor: pointer;
   display: flex;
