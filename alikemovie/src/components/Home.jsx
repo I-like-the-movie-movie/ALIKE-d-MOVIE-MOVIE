@@ -44,7 +44,7 @@ const Home = () => {
           <button className='now_movie_list' onClick={() => {
             navigate('/list')
           }}>
-            지금까지의 영화들
+            지금까지의 영화들-
           </button>
 
           <button className='review_list' onClick={onClickButton}>
