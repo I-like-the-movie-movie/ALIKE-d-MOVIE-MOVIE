@@ -1,0 +1,17 @@
+.list_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.list_title {
+  font-size: 1.25rem;
+  color: #212121;
+}
+
+.movies {
+  width: 15.625rem;
+  height: 3.125rem;
+  border: 1px solid #212121
+}
