@@ -38,16 +38,27 @@ function Post() {
 
 
   return (
-    <form className="Form">
+
     <div>
 
         <form
         onSubmit={(e) => {
           console.log('ccc');
 					// 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
-          e.preventDefault();
+          // e.preventDefault();
           console.log(review);
           onSubmitHandler(review);
+          console.log('dddd');
+                    {/* <button type="button" onClick="refreshPage()">Close</button>
+
+function refreshPage(){ window.location.reload() */}
+  // 버튼 눌렀을때 새로고침
+  // window.location.reload()
+  // 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
+  // e.preventDefault();
+  //질문: window.location.reload() , e.preventDefault() 쓰나 안쓰나 새로고침이 되는 문제. 차이가 무엇인지.
+  // 질문2: 엔터 온클릭의 차이 (렌러링 범위, 속도)
+
         }}
       >
         <input
@@ -79,7 +90,6 @@ function Post() {
 
       </div>
 
-   </form>
   );
 }
 
