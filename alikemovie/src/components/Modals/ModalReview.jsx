@@ -1,30 +1,27 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-  function ModalReview({ onClose }) {
-    const handleClose = () => {
-      onClose?.();
-    };
-    return (
-      <Overlay>
+function ModalReview({ onClose }) {
+  const handleClose = () => {
+    onClose?.();
+  };
+  return (
+    <Overlay>
       <ModalWrap>
         <CloseButton onClick={handleClose}>
-          <i className="fa-solid fa-xmark"></i>
+          <i className='fa-solid fa-xmark'></i>
         </CloseButton>
         <Contents>
           <h1> 영화 리뷰 상세내용 </h1>
           <h1> 글쓴이 </h1>
           <h1> 재미있어요 </h1>
 
-
-
           <Button onClick={handleClose}>Close</Button>
         </Contents>
       </ModalWrap>
-    <div> test</div>
+      <div> test</div>
     </Overlay>
-
-  )
+  );
 }
 
 const Overlay = styled.div`
@@ -89,5 +86,4 @@ const Button = styled.button`
   }
 `;
 
-
-export default ModalReview
+export default ModalReview;

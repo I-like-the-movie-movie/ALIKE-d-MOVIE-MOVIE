@@ -1,0 +1,38 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "movie_title": "json-server"
+    },
+    {
+      "id": 2,
+      "movie_title": "test"
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "home": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
