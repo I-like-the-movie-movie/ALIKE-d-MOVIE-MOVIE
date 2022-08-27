@@ -58,15 +58,15 @@ function ModalInput() {
         />
         <button>추가하기</button>
 
-        <div>
-        {reviews?.map((review) => (
-          <div key={review.id}>{review.movie_title}</div>
-        ))}
-      </div>
 
 
       </form>
 
+      <div>
+        {reviews?.map((review) => (
+          <div key={review.id}>{review.movie_title}</div>
+        ))}
+      </div>
 
 
 

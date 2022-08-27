@@ -47,9 +47,36 @@ const Home = () => {
             지금까지의 영화들
           </button>
 
-          <button className='review_list' onClick={onClickButton}>
+          <form
+        onSubmit={(e) => {
+					// 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
+          e.preventDefault();
+          onSubmitHandler(review);
+        }}
+      >
+        <input
+          type="text"
+          onChange={(ev) => {
+            const { value } = ev.target;
+            setReview({
+              ...review,
+              movie_title: value,
+            });
+          }}
+        />
+        <button>추가하기</button>
+      </form>
+
+      <div>
+        {reviews?.map((review) => (
+          <div key={review.id}>{review.movie_title}</div>
+        ))}
+      </div>
+
+
+          {/* <button className='review_list' onClick={onClickButton}>
             리뷰쓰러 가기
-          </button>
+          </button> */}
           {isOpen && (
             <ModalInput
               open={isOpen}
