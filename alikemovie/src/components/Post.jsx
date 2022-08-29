@@ -16,7 +16,7 @@ import './App.css';
 import Modal from 'react-modal';
 >>>>>>> b1fd330b95d97951aab3417a30aa3d42d05290fa
 
-function ModalInput() {
+function Post() {
 
   const [review, setReview] = useState({
     movie_title: "",
@@ -26,10 +26,12 @@ function ModalInput() {
   const fetchReviews = async () => {
     const { data } = await axios.get("http://localhost:3001/reviews");
     setReviews(data);
+    console.log('bbbb');
   };
 
   const onSubmitHandler = (review) => {
     axios.post("http://localhost:3001/reviews", review);
+    console.log('aaaaa');
   };
 
   useEffect(() => {
@@ -42,15 +44,32 @@ function ModalInput() {
 
 
   return (
+<<<<<<< HEAD:alikemovie/src/components/Modals/ModalInput.jsx
 <<<<<<< HEAD
     <form className="Form">
+=======
+>>>>>>> 9569da5e085dce7827b634439115b71a35b46a94:alikemovie/src/components/Post.jsx
 
+    <div>
 
         <form
         onSubmit={(e) => {
+          console.log('ccc');
 					// 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
-          e.preventDefault();
+          // e.preventDefault();
+          console.log(review);
           onSubmitHandler(review);
+          console.log('dddd');
+                    {/* <button type="button" onClick="refreshPage()">Close</button>
+
+function refreshPage(){ window.location.reload() */}
+  // 버튼 눌렀을때 새로고침
+  // window.location.reload()
+  // 👇 submit했을 때 브라우저의 새로고침을 방지합니다. 
+  // e.preventDefault();
+  //질문: window.location.reload() , e.preventDefault() 쓰나 안쓰나 새로고침이 되는 문제. 차이가 무엇인지.
+  // 질문2: 엔터 온클릭의 차이 (렌러링 범위, 속도)
+
         }}
       >
         <input
@@ -64,8 +83,14 @@ function ModalInput() {
           }}
         />
         <button>추가하기</button>
+        {/* <div>
+        {reviews?.map((review) => (
+          <div key={review.id}>{review.movie_title}</div>
+        ))}
+      </div> */}
+      </form>
 
-        <div>
+      <div>
         {reviews?.map((review) => (
           <div key={review.id}>{review.movie_title}</div>
         ))}
@@ -113,17 +138,14 @@ function ModalInput() {
       </div>
 
 
-      </form>
 
 
+      </div>
 
-
-
-      {/* </div> */}
-    </form>
   );
 }
 
+<<<<<<< HEAD:alikemovie/src/components/Modals/ModalInput.jsx
 // const Overlay = styled.div`
 //   position: fixed;
 //   width: 100%;
@@ -187,3 +209,6 @@ function ModalInput() {
 // `;
 
 export default ModalInput;
+=======
+export default Post;
+>>>>>>> 9569da5e085dce7827b634439115b71a35b46a94:alikemovie/src/components/Post.jsx
