@@ -7,31 +7,11 @@ import ModalInput from './Post';
 import styled from 'styled-components';
 import axios from 'axios';
 
-<<<<<<< HEAD
-const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [review, setReview] = useState({
-    movie_title: '',
-  });
-  const [reviews, setReviews] = useState(null);
 
-  const fetchReviews = async () => {
-    const { data } = await axios.get('http://localhost:3001/reviews');
-    setReviews(data);
-  };
-
-  const onSubmitHandler = review => {
-    axios.post('http://localhost:3001/reviews', review);
-  };
-
-  useEffect(() => {
-    fetchReviews();
-  }, []);
-=======
 
 const Home = () => {
->>>>>>> 9569da5e085dce7827b634439115b71a35b46a94
 
+  const test = "test"
 
   const navigate = useNavigate();
 
@@ -41,19 +21,11 @@ const Home = () => {
         <img className='logo' src={Logo} alt='로고' />
 
         <div className='list_button'>
-<<<<<<< HEAD
-          <button
-            className='now_movie_list'
-            onClick={() => {
-              navigate('/list');
-            }}>
-            지금까지의 영화들-
-=======
+
           <button className='now_movie_list' onClick={() => {
             navigate('/list')
           }}>
             지금까지의 영화들
->>>>>>> 9569da5e085dce7827b634439115b71a35b46a94
           </button>
           
           <button className='review_list' onClick={()=> {
