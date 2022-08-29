@@ -56,7 +56,7 @@ const Home = () => {
           const AppWrap = styled.div`
             text-align: center;
             margin: 50px auto;
-          `;
+          `; 
 
 
 export default Home;
