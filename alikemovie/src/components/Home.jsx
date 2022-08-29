@@ -10,7 +10,7 @@ import axios from "axios";
 
 
 const Home = () => {
-
+  const test = "test"
 
   const navigate = useNavigate();
 
