@@ -12,8 +12,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
+<<<<<<< HEAD
     "react-script": "^2.0.5",
+=======
+>>>>>>> b1fd330b95d97951aab3417a30aa3d42d05290fa
     "react-scripts": "^5.0.1",
+    "react-script": "^2.0.5",
     "redux": "^4.2.0",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.0"
