@@ -19,15 +19,6 @@ const List2 = () => {
     dispatch(__getReviews());
   }, [dispatch]);
 
-  // const { isLoading, error, reviews } = useSelector((state) => state.reviews);
-
-  // if (isLoading) {
-  //   return <div>로딩 중....</div>;
-  // }
-  // if (error) {
-  //   return <div>{error.message}</div>;
-  // }
-
   return (
     <div>
       <header>

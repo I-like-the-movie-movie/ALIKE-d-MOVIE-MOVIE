@@ -8,23 +8,17 @@ import { nanoid } from "@reduxjs/toolkit";
 
 function Post2() {
   const dispatch = useDispatch();
-  const [starValue, setStarValue] = useState("");
 
   const titleInput = useRef(null);
   const contentInput = useRef(null);
   const pictureInput = useRef(null);
+  const starInput = useRef(null);
 
-  const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-    setStarValue({ ...starValue, [name]: value });
-    console.log(value);
-  };
   const onClickHandler = (e) => {
     e.preventDefault();
-    console.log(starValue);
     const addPost = {
       id: nanoid(),
-      star: starValue,
+      star: starInput.current.value,
       movie_title: titleInput.current.value,
       picture: pictureInput.current.value,
       content: contentInput.current.value,
@@ -54,7 +48,7 @@ function Post2() {
         <input ref={titleInput} type="text" />
 
         <h1> star </h1>
-        <select name="star" value={starValue} onChange={onChangeHandler}>
+        <select name="star" ref={starInput}>
           <option>star</option>
           <option value="1">★</option>
           <option value="2">★★</option>

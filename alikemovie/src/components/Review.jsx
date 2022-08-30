@@ -8,11 +8,9 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { __getReviews } from "../Redux/modules/reviewSlice";
 
-function Review() {
-
-  
+function Review({ star, movie_title, picture, content }) {
   const location = useLocation();
-  const param = useParams();
+  const { id } = useParams();
 
   useEffect(() => {}, []);
 
@@ -22,12 +20,20 @@ function Review() {
     <div>
       <div>
         <h1>title</h1>
+        {movie_title}
         <h1>star</h1>
+        {star === "1" ? <Star defaultValue="★" /> : star}
+
         <h1>content</h1>
+        {content}
       </div>
     </div>
   );
 }
+
+const Star = styled.h2`
+  color: yellow;
+`;
 
 export default Review;
 
