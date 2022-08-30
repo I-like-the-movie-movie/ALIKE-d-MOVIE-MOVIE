@@ -1,0 +1,48 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  font-size: 32px;
+  padding: 50px;
+}
+
+.movie_list {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.movie_poster {
+  position: relative;
+  width: 200px;
+  height: 240px;
+  background-color: aqua;
+}
+.movie_poster > img {
+  position: absolute;
+  width: 200px;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+.movie_info h3 {
+  color: blue;
+  font-size: 20px;
+}
