@@ -1,7 +1,5 @@
-import { PayloadAction } from "@reduxjs/toolkit";
 import React, { useEffect } from "react";
 import { __getReviews } from "../Redux/modules/reviewSlice";
-// import { reviewsSlice } from "../Redux/modules/reviewSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -13,19 +11,13 @@ const List2 = () => {
   useEffect(() => {
     dispatch(__getReviews());
   }, [dispatch]);
-
   const { isLoading, error, reviews } = useSelector((state) => state.reviews);
   if (isLoading) {
     return <div>로딩 중....</div>;
   }
-
   if (error) {
     return <div>{error.message}</div>;
   }
-  console.log({ reviews });
-  // console.log({ reviewsSlice });
-  // console.log({dispatch})
-  // console.log({PayloadAction})
 
   return (
     <div>
@@ -44,7 +36,6 @@ const List2 = () => {
           </div>
         ))}
       </div>
-      {/* <div>List2</div>;  */}
     </div>
   );
 };
