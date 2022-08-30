@@ -12,10 +12,10 @@ import { __postReviews } from "../Redux/modules/reviewSlice";
 // import { reviewsSlice } from "../Redux/modules/reviewSlice";
 
 function Post2() {
-  // const [review, setReview] = useState({
-  //   movie_title: "",
-  // });
-  // const [reviews, setReviews] = useState(null);
+  const [review, setReview] = useState({
+    movie_title: "",
+  });
+  const [reviews, setReviews] = useState(null);
 
   const fetchReviews = async () => {
     const { data } = await axios.get("http://localhost:3001/reviews");
