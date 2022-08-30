@@ -47,32 +47,27 @@ function Review() {
           list
         </button>
       </header>
-      <div>pathname : {location.pathname}</div>
-      {/* <div>
-        detailReviews[{location.pathname}]
-      </div> */}
-      {/* <div>
-        {detailreviews[Number(param.id)]}
-      </div> */}
+      {/* <div>pathname : {location.pathname}</div> */}
       {detailreviews?.map((detailReview) => (
-        <div> {detailReview.movie_title} </div>
+        <div> {detailReview.movie_title.id} </div>
       ))}
       <div>
         {detailreviews
           ?.filter((el) => el.id === Number(param.id))
-
           ?.map((detailReview) => (
             <div>
+              <h1>title</h1>
               {detailReview.movie_title}
+              <h1>star</h1>
               {detailReview.star}
+              <h1>content</h1>
               {detailReview.content}
+              <h1>img</h1>
               {detailReview.picture}
               {/* {detailReview.comments} */}
             </div>
           ))}
       </div>
-
-      {/* <div> `${{review.id}}` </div> */}
     </div>
   );
 }
