@@ -1,40 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import { PayloadAction } from '@reduxjs/toolkit';
+import React, { useEffect } from 'react';
 import { __getReviews } from '../Redux/modules/reviewSlice';
+// import { reviewsSlice } from "../Redux/modules/reviewSlice";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import './List2.css';
-import imgfile from '../assets/image.jpg';
-import axios from 'axios';
 
 const List2 = () => {
-  const [reviewsCon, setReviewsCon] = useState({ movie_title: '', picture: null, contents: '' });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const fetchReviews = async () => {
-    const { reviews } = await axios.get('http://locahost:3001/reviews');
-    setReviewsCon(reviews);
-  };
+  useEffect(() => {
+    dispatch(__getReviews());
+  }, [dispatch]);
+
+  const { isLoading, error, reviews } = useSelector(state => state.reviews);
+  if (isLoading) {
+    return <div>로딩 중....</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+  console.log({ reviews });
+  // console.log({ reviewsSlice });
+  // console.log({dispatch})
+  // console.log({PayloadAction})
 
   return (
-    <main className='wrap'>
-      <header className='list_title'>영화입니다</header>
-
-      <article className='movie_list'>
-        <div className='movie_info'>
-          <div className='movie_poster'>
-            <img src={imgfile} alt='이밎포스터' />
+    <div>
+      <div>
+        {reviews?.map(review => (
+          <div>
+            <div
+              onClick={() => {
+                navigate(`/review/${review.id}`);
+              }}>
+              <div key={review.id}>{review.movie_title}</div>
+              <div key={review.id}>{review.picture}</div>
+              <div key={review.id}>{review.star}</div>
+            </div>
           </div>
-          <h3>바보멍청이똥개</h3>
-          <p>존잼</p>
-        </div>
-        <div className='movie_info'>
-          <div className='movie_poster'>
-            <img src={imgfile} alt='이밎포스터' />
-          </div>
-          <h3>바보멍청이똥개</h3>
-          <p>존잼</p>
-        </div>
-      </article>
-    </main>
+        ))}
+      </div>
+      {/* <div>List2</div>;  */}
+    </div>
   );
 };
 
