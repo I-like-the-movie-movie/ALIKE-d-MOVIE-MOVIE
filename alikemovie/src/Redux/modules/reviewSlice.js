@@ -5,33 +5,29 @@ const initialState = {
   reviews: [],
   isLoading: false,
   error: null,
-  
-};
 
-export const __getReviews = createAsyncThunk(
-  "reviews/getReviews",
+};
+export const __postReviews = createAsyncThunk(
+  "reviews/postReviews",
   async (payload, thunkAPI) => {
-    try{
-      const data = await axios.get("http://localhost:3001/reviews");
+    try {
+      const data = await axios.post("http://localhost:3001/reviews");
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
-
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
 );
-export const __postReviews = createAsyncThunk(
-  "reviews/postReviews",
+
+export const __getReviews = createAsyncThunk(
+  "reviews/getReviews",
   async (payload, thunkAPI) => {
-    try{
-      const data = await axios.post("http://localhost:3001/reviews",{
-        movie_title: payload.movie_title
-      });
+    try {
+      const data = await axios.get("http://localhost:3001/reviews");
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
-
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue(error);
@@ -68,7 +64,7 @@ export const __postReviews = createAsyncThunk(
 // );
 
 
-  export const reviewsSlice = createSlice({
+export const reviewsSlice = createSlice({
   name: "reviews",
   initialState,
   reducers: {},
@@ -95,17 +91,14 @@ export const __postReviews = createAsyncThunk(
         state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
         state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
       },
+
   },
 });
-
-
-
 
 // // 액션크리에이터는 컴포넌트에서 사용하기 위해 export 하고
 // export const { addNumber, minusNumber } = reviewSlice.actions;
 // // reducer 는 configStore에 등록하기 위해 export default 합니다.
 // export default reviewSlice.reducer;
-
 
 export const {} = reviewsSlice.actions;
 export default reviewsSlice.reducer;

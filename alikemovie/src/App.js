@@ -1,6 +1,6 @@
-import React, { useSelector } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
+import React, { useSelector } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
 // import List from './components/List';
 import List2 from './components/List2';
 import Post from './components/Post';
@@ -22,11 +22,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/post' element={<Post />}></Route>
-        <Route path='/list' element={<List />}></Route>
+        <Route path='/post' element={<Post2 />}></Route>
+        <Route path='/list' element={<List2 />}></Route>
         <Route path='/review' element={<Review />}></Route>
         <Route path="/review/:id" element={<Review />} />
-
       </Routes>
     </BrowserRouter>
   );
