@@ -27,6 +27,7 @@
       "id": 4
     },
     {
+<<<<<<< HEAD
       "movie_title": "엔칸토",
       "star": "4",
       "content": "we don't talk about bruno no no no",
@@ -38,10 +39,23 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+=======
+      "movie_title": "The Pianist",
+      "star": "4",
+      "content": "폴란드 태생의 유대인 피아니스트 브와디스와프 슈필만(Władysław Szpilman)의 저서를 바탕으로 한 로만 폴란스키의 제2차 세계 대전, 홀로코스트 영화. 폴란드에서 평화롭게 지내던 유대인 가족이 나치의 침공에 의해 해체되는 모습을 그렸다.",
+      "id": 5
+    },
+    {
+      "movie_title": "오아아아",
+      "star": "3",
+      "content": "으아아아아ㅏ",
+      "id": 6
+>>>>>>> 5eb0d96ca3d02d7bcab5062b206a4a8140eaa3af
     }
   ],
   "comments": [
     {
+<<<<<<< HEAD
       "id": 1,
       "body": "some comment",
       "postId": 1
@@ -50,4 +64,11 @@
   "profile": {
     "name": "typicode"
   }
+=======
+      "review_id": 1,
+      "body": "some comment",
+      "id": 1
+    }
+  ]
+>>>>>>> 5eb0d96ca3d02d7bcab5062b206a4a8140eaa3af
 }

@@ -1,0 +1,41 @@
+.home_wrap {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.logo {
+  width: 350px;
+  margin: 100px auto 0 auto;
+}
+
+.list_button {
+  margin-top: 40px;
+}
+
+.now_movie_list,
+.review_list {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 35px;
+  margin: 20px auto 0 auto;
+  background-color: #fff;
+}
+
+button:hover {
+  background-color: #ff9e10;
+  color: #fff;
+}
+
+.orange_arrow {
+  width: 20%;
+}
+
+.orange_arrow:hover {
+  background-image: url("../assets/arrow_white.svg");
+}
