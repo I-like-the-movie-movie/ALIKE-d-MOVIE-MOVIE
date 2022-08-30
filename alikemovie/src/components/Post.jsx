@@ -50,7 +50,7 @@ function Post() {
           onSubmitHandler(review);
         }}
       >
-        <input
+        {/* <input
           type="text"
           onChange={(ev) => {
             const { value } = ev.target;
@@ -59,7 +59,15 @@ function Post() {
               movie_title: value,
             });
           }}
+        /> */}
+                <input
+          type="text"
+          onChange={(ev) => {
+            const { value } = ev.target;
+            reviews.reviews = {value}
+          }}
         />
+
         <button>추가하기</button>
         {/* <div>
         {reviews?.map((review) => (

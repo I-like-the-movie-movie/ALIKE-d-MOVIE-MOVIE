@@ -20,9 +20,53 @@ export const __getReviews = createAsyncThunk(
       console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
+  }
+);
+export const __postReviews = createAsyncThunk(
+  "reviews/postReviews",
+  async (payload, thunkAPI) => {
+    try{
+      const data = await axios.post("http://localhost:3001/reviews",{
+        movie_title: payload.movie_title
+      });
+      console.log(data);
+      return thunkAPI.fulfillWithValue(data.data);
+
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error);
+    }
 
   }
 );
+// export const updateUser2 = createAsyncThunk(
+//   "users/update", 
+//   async (user) => {
+//   const response = await axios.post(
+//     "http://localhost:8800/api/users/1/update",
+//     user
+//   );
+//   return response.data;
+// });
+// export const loginUser = createAsyncThunk(
+//   "auth/login",
+//   async (authData) => {
+//     const response = axios.post("auth/token/login/", {
+//       email: authData.email,
+//       password: authData.password,
+//     });
+//     return response.data;
+//   },
+//   {
+//     condition: (authData, { getState, extra }) => {
+//       const { auth } = getState();
+//       if (["fulfilled", "loading"].includes(auth.status)) {
+//         return false;
+//       }
+//     },
+//   }
+// );
+
 
   export const reviewsSlice = createSlice({
   name: "reviews",
@@ -37,6 +81,17 @@ export const __getReviews = createAsyncThunk(
         state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
       },
       [__getReviews.rejected]: (state, action) => {
+        state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
+        state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
+      },
+      [__postReviews.pending]: (state) => {
+        state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
+      },
+      [__postReviews.fulfilled]: (state, action) => {
+        state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
+        state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+      },
+      [__postReviews.rejected]: (state, action) => {
         state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
         state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
       },
