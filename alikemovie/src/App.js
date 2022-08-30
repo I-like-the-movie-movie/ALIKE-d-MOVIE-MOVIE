@@ -6,15 +6,6 @@ import List2 from "./components/List2";
 import Post2 from "./components/Post2";
 import Review from "./components/Review";
 
-// const App = () => {
-//   return (
-//     <div>
-//       {' '}
-//       <Router />{' '}
-//     </div>
-//   );
-// };
-
 const App = () => {
   return (
     <BrowserRouter>

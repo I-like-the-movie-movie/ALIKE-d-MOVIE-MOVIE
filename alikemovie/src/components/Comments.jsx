@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
-function Post2() {
+function Coments() {
   const [review, setReview] = useState({
     movie_title: "",
   });
@@ -22,21 +21,8 @@ function Post2() {
     fetchReviews();
   }, []);
 
-  const navigate = useNavigate();
-
   return (
     <Body>
-      <header>
-        {" "}
-        <button
-          className="now_movie_list"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          home
-        </button>
-      </header>
       <Divleft
         onSubmit={(e) => {
           // 👇 submit했을 때 브라우저의 새로고침을 방지합니다.
@@ -106,52 +92,4 @@ function Post2() {
   );
 }
 
-const Body = styled.div`
-  border: 1px solid;
-  display: inline-block;
-
-  width: 100%;
-  min-width: 450px;
-  max-height: 600px;
-`;
-
-const Divleft = styled.form`
-  border: 1px solid red;
-
-  margin: 3%;
-  padding: 0% 2%;
-  float: left;
-  width: 40%;
-  height: 60%;
-`;
-const Textarea = styled.textarea`
-  height: 60px;
-  width: 150px;
-`;
-
-const Divright = styled.div`
-  border: 1px solid green;
-
-  margin: 3% 1%;
-  padding: 0% 2%;
-
-  display: inline-block;
-
-  width: 40%;
-  height: 60%;
-`;
-const Preimg = styled.div`
-  border: 1px solid;
-  margin: 10px 0px;
-  height: 200px;
-  width: 170px;
-`;
-
-const Divfoot = styled.div`
-  border: 1px solid blue;
-  margin: 1% 3%;
-  text-align: center;
-  width: 92%;
-`;
-
-export default Post2;
+export default Coments;
