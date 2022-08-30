@@ -7,11 +7,8 @@ import ModalInput from './Post';
 import styled from 'styled-components';
 import axios from 'axios';
 
-
-
 const Home = () => {
-
-  const test = "test"
+  const test = 'test';
 
   const navigate = useNavigate();
 
@@ -21,19 +18,21 @@ const Home = () => {
         <img className='logo' src={Logo} alt='로고' />
 
         <div className='list_button'>
-
-          <button className='now_movie_list' onClick={() => {
-            navigate('/list')
-          }}>
+          <button
+            className='now_movie_list'
+            onClick={() => {
+              navigate('/list');
+            }}>
             지금까지의 영화들
           </button>
-          
-          <button className='review_list' onClick={()=> {
-            navigate('/post')
-          }}>
+
+          <button
+            className='review_list'
+            onClick={() => {
+              navigate('/post');
+            }}>
             리뷰쓰러 가기
           </button>
-          
         </div>
       </div>
     </>
