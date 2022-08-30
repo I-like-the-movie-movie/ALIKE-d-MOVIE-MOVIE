@@ -1,19 +1,21 @@
 // import "./ModalInput.css";
 // import Modal from "react-modal";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 // import './Home.css';
 // import Logo from '../assets/logo.svg';
 // import ModalReview from './Modals/ModalReview';
 // import List from './List';
 import styled from "styled-components";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { __postReviews } from "../Redux/modules/reviewSlice";
+// import { reviewsSlice } from "../Redux/modules/reviewSlice";
 
-function Post() {
-  const [review, setReview] = useState({
-    movie_title: "",
-  });
-  const [reviews, setReviews] = useState(null);
+function Post2() {
+  // const [review, setReview] = useState({
+  //   movie_title: "",
+  // });
+  // const [reviews, setReviews] = useState(null);
 
   const fetchReviews = async () => {
     const { data } = await axios.get("http://localhost:3001/reviews");
@@ -61,6 +63,7 @@ function Post() {
         ))}
       </div> */}
         </form>
+        <h1>post2</h1>
 
         <div>
           {reviews?.map((review) => (
@@ -72,4 +75,4 @@ function Post() {
   );
 }
 
-export default Post;
+export default Post2;
