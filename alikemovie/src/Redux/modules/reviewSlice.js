@@ -5,7 +5,7 @@ const initialState = {
   reviews: [],
   isLoading: false,
   error: null,
-
+  
 };
 
 export const __getReviews = createAsyncThunk(
