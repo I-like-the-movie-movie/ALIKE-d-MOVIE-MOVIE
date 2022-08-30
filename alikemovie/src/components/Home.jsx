@@ -23,13 +23,13 @@ const Home = () => {
         <div className='list_button'>
 
           <button className='now_movie_list' onClick={() => {
-            navigate('/list2')
+            navigate('/list')
           }}>
             지금까지의 영화들
           </button>
           
           <button className='review_list' onClick={()=> {
-            navigate('/post2')
+            navigate('/post')
           }}>
             리뷰쓰러 가기
           </button>

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // import './Home.css';
 // import Logo from '../assets/logo.svg';
 // import ModalReview from './Modals/ModalReview';
-// import List from './List';
+import List from './List';
 import styled from 'styled-components';
 import axios from "axios"; 
 
@@ -50,7 +50,7 @@ function Post() {
           onSubmitHandler(review);
         }}
       >
-        {/* <input
+        <input
           type="text"
           onChange={(ev) => {
             const { value } = ev.target;
@@ -59,21 +59,21 @@ function Post() {
               movie_title: value,
             });
           }}
-        /> */}
-                <input
+        />
+                {/* <input
           type="text"
           onChange={(ev) => {
             const { value } = ev.target;
             reviews.reviews = {value}
           }}
-        />
+        /> */}
 
         <button>추가하기</button>
-        {/* <div>
+        <div>
         {reviews?.map((review) => (
           <div key={review.id}>{review.movie_title}</div>
         ))}
-      </div> */}
+      </div>
       </form>
 
       <div>
