@@ -17,13 +17,13 @@ export const __putReviews = createAsyncThunk(
       return thunkAPI.rejectWithValue(error);
     }
   }
-);
+); //put del id를 특정
 
 export const __postReviews = createAsyncThunk(
   "reviews/postReviews",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.post("http://localhost:3001/reviews");
+      const data = await axios.post("http://localhost:3001/reviews", payload);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -58,6 +58,10 @@ export const reviewsSlice = createSlice({
     [__getReviews.rejected]: (state, action) => {
       state.isLoading = false;
       state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
+    },
+    [__postReviews.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.reviews.push(action.payload);
     },
   },
 });
