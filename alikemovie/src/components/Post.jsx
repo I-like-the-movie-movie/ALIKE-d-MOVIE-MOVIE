@@ -30,7 +30,7 @@ function Post() {
     fetchReviews();
   }, []);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <form className="Form">
