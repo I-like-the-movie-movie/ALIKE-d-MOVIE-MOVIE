@@ -1,39 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Home.css';
-import Logo from '../assets/logo.svg';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
+import Logo from "../assets/logo.svg";
 // import ModalReview from './Modals/ModalReview';
-import ModalInput from './Post';
-import styled from 'styled-components';
-import axios from 'axios';
-
-
+import ModalInput from "./Post";
+import styled from "styled-components";
+import axios from "axios";
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [review, setReview] = useState({
+    movie_title: "",
+  });
+  const [reviews, setReviews] = useState(null);
 
-  const test = "test"
+  const fetchReviews = async () => {
+    const { data } = await axios.get("http://localhost:3001/reviews");
+    setReviews(data);
+  };
 
-  const navigate = useNavigate();
+  const onSubmitHandler = (review) => {
+    axios.post("http://localhost:3001/reviews", review);
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
 
   return (
     <>
-      <div className='home_wrap'>
-        <img className='logo' src={Logo} alt='로고' />
+      <div className="home_wrap">
+        <img className="logo" src={Logo} alt="로고" />
 
-        <div className='list_button'>
-
-          <button className='now_movie_list' onClick={() => {
-            navigate('/list')
-          }}>
+        <div className="list_button">
+          <button
+            className="now_movie_list"
+            onClick={() => {
+              navigate("/list");
+            }}
+          >
             지금까지의 영화들
           </button>
-          
-          <button className='review_list' onClick={()=> {
-            navigate('/post')
-          }}>
+
+          <button
+            className="review_list"
+            onClick={() => {
+              navigate("/post");
+            }}
+          >
             리뷰쓰러 가기
           </button>
-          
         </div>
       </div>
     </>
