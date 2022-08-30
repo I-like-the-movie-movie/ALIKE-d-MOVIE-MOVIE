@@ -16,6 +16,8 @@ const List2 = () => {
   }, [dispatch]);
 
   const { isLoading, error, reviews } = useSelector((state) => state.reviews);
+  console.log(reviews);
+
   if (isLoading) {
     return <div>로딩 중....</div>;
   }
