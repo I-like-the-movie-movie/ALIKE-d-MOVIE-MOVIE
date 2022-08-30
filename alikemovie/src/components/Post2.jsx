@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.svg";
 
 function Post2() {
   const [review, setReview] = useState({
@@ -27,7 +28,9 @@ function Post2() {
   return (
     <Body>
       <header>
-        {" "}
+        <Wrap>
+          <img className="logo" src={Logo} alt="로고" />
+        </Wrap>{" "}
         <button
           className="now_movie_list"
           onClick={() => {
@@ -112,11 +115,22 @@ const Body = styled.div`
 
   width: 100%;
   min-width: 450px;
-  max-height: 600px;
+  height: 100%;
+  max-height: 800px;
+`;
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 `;
 
+const Logobox = styled.div`
+  width: 350px;
+  margin: 100px auto 0 auto;
+`;
 const Divleft = styled.form`
   border: 1px solid red;
+  border-radius: 30px;
 
   margin: 3%;
   padding: 0% 2%;
@@ -126,11 +140,12 @@ const Divleft = styled.form`
 `;
 const Textarea = styled.textarea`
   height: 60px;
-  width: 150px;
+  width: 95%;
 `;
 
 const Divright = styled.div`
   border: 1px solid green;
+  border-radius: 30px;
 
   margin: 3% 1%;
   padding: 0% 2%;
@@ -148,7 +163,7 @@ const Preimg = styled.div`
 `;
 
 const Divfoot = styled.div`
-  border: 1px solid blue;
+  border: 1px dashed blue;
   margin: 1% 3%;
   text-align: center;
   width: 92%;

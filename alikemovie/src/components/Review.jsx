@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.svg";
 
 import reviewSlice from "../Redux/modules/reviewSlice";
 
@@ -35,9 +36,11 @@ function Review() {
   // List.jsx에서 state자료를 받아와서 (  const [reviews, setReviews] = useState(null);)
   // Reviews.jsx
   return (
-    <div>
+    <Body>
+      <Wrap>
+        <img className="logo" src={Logo} alt="로고" />
+      </Wrap>
       <header>
-        {" "}
         <button
           className="now_movie_list"
           onClick={() => {
@@ -47,29 +50,42 @@ function Review() {
           list
         </button>
       </header>
-      {/* <div>pathname : {location.pathname}</div> */}
       {detailreviews?.map((detailReview) => (
-        <div> {detailReview.movie_title.id} </div>
+        <div> {detailReview.movie_title.id} </div> //이거뭐져
       ))}
       <div>
         {detailreviews
           ?.filter((el) => el.id === Number(param.id))
           ?.map((detailReview) => (
             <div>
+              <h1>Poster</h1>
+              {detailReview.picture}
               <h1>title</h1>
               {detailReview.movie_title}
               <h1>star</h1>
               {detailReview.star}
               <h1>content</h1>
               {detailReview.content}
-              <h1>img</h1>
-              {detailReview.picture}
+
               {/* {detailReview.comments} */}
             </div>
           ))}
       </div>
-    </div>
+    </Body>
   );
 }
 
+const Body = styled.div`
+  margin: 5%;
+`;
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+`;
+
+const Logobox = styled.div`
+  width: 350px;
+  margin: 100px auto 0 auto;
+`;
 export default Review;
