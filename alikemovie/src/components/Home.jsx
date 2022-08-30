@@ -8,15 +8,31 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 const Home = () => {
-  const test = 'test';
+  const [isOpen, setIsOpen] = useState(false);
+  const [review, setReview] = useState({
+    movie_title: '',
+  });
+  const [reviews, setReviews] = useState(null);
+
+  // const fetchReviews = async () => {
+  //   const { data } = await axios.get("http://localhost:3001/reviews");
+  //   setReviews(data);
+  // };
 
   const navigate = useNavigate();
+
+  const onSubmitHandler = review => {
+    axios.post('http://localhost:3001/reviews', review);
+  };
+
+  // useEffect(() => {
+  //   fetchReviews();
+  // }, []);
 
   return (
     <>
       <div className='home_wrap'>
         <img className='logo' src={Logo} alt='로고' />
-
         <div className='list_button'>
           <button
             className='now_movie_list'
@@ -29,7 +45,7 @@ const Home = () => {
           <button
             className='review_list'
             onClick={() => {
-              navigate('/post');
+              navigate('/post2');
             }}>
             리뷰쓰러 가기
           </button>

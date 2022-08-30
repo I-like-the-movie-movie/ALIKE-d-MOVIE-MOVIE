@@ -1,61 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { __getReviews } from '../Redux/modules/reviewSlice';
-import { __postReviews } from '../Redux/modules/reviewSlice';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { __postReviews } from '../Redux/modules/reviewSlice';
+import { __getReviews } from '../Redux/modules/reviewSlice';
 
 function Post2() {
+  const [inputValue, setInputValue] = useState({ movie_title: '' });
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(__getReviews);
-    dispatch(__postReviews);
-  }, [dispatch]);
-
-  const onSubmitHandler = review => {
-    console.log('aaaaa');
-    axios.post('http://localhost:3001/reviews', review);
-  };
+    dispatch(__getReviews(), __postReviews());
+  }, []);
 
   const { isLoading, error, reviews } = useSelector(state => state.reviews);
   if (isLoading) {
     return <div>로딩 중....</div>;
   }
-
   if (error) {
     return <div>{error.message}</div>;
   }
 
+  const onChange = e => {
+    const { movieTitle } = e.target;
+    console.log('🚀 ~ onChange ~ movieTitle', movieTitle);
+
+    // setInputValue({ movieTitle });
+  };
+
+  const onSubmitHandler = e => {
+    // const response = axios.post('http://localhost:3001/reviews', setInputValue);
+    // dispatch({type:'reviews', movie_title:'movieTitle'})
+    console.log('ggg');
+    // return __postReviews();
+  };
+
   return (
     <div>
-      <form
-        onSubmit={e => {
-          console.log('ccc');
-          // 👇 submit했을 때 브라우저의 새로고침을 방지합니다.
-          onSubmitHandler(__getReviews);
-          // e.preventDefault();
-        }}>
-        <input
-          type='text'
-          onChange={ev => {
-            const { value } = ev.target;
-            __postReviews({
-              ...__postReviews,
-              movie_title: value,
-            });
-          }}
-        />
-        <button>추가하기</button>
-        {/* <div>
-        {reviews?.map((review) => (
-          <div key={review.id}>{review.movie_title}</div>
-        ))}
-      </div> */}
+      <form onSubmit={onSubmitHandler()}>
+        <input type='text' onChange={onChange} />
+        <button>제목추가하기</button>
       </form>
-
       <div>
         {reviews?.map(review => (
           <div key={review.id}>{review.movie_title}</div>

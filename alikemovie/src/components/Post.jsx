@@ -2,10 +2,6 @@
 // import Modal from "react-modal";
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import './Home.css';
-// import Logo from '../assets/logo.svg';
-// import ModalReview from './Modals/ModalReview';
-// import List from './List';
 import styled from 'styled-components';
 import axios from 'axios';
 
@@ -38,6 +34,7 @@ function Post() {
         <form
           onSubmit={e => {
             console.log('ccc');
+
             // 👇 submit했을 때 브라우저의 새로고침을 방지합니다.
             e.preventDefault();
             console.log(review);
