@@ -1,32 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Logo from "../assets/logo.svg";
-// import ModalReview from './Modals/ModalReview';
 import styled from "styled-components";
-import axios from "axios";
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [review, setReview] = useState({
-    movie_title: "",
-  });
-  const [reviews, setReviews] = useState(null);
-
-  // const fetchReviews = async () => {
-  //   const { data } = await axios.get("http://localhost:3001/reviews");
-  //   setReviews(data);
-  // };
-
   const navigate = useNavigate();
-
-  const onSubmitHandler = (review) => {
-    axios.post("http://localhost:3001/reviews", review);
-  };
-
-  // useEffect(() => {
-  //   fetchReviews();
-  // }, []);
 
   return (
     <>

@@ -9,7 +9,7 @@ const Lists = ({ id, movie_title, star, content, picture }) => {
     <Divbox>
       <div
         onClick={() => {
-          navigate(`/review/${id}`);
+          navigate(`/Review/${id}`);
         }}
       >
         <div>{picture}</div>
@@ -43,8 +43,9 @@ const Divbox = styled.div`
   border: 1px solid;
   border-radius: 20px;
   text-align: center;
-  margin: 1% 20%;
+  margin: 2%;
   padding: 10px;
+  min-width: 400px;
 `;
 const Star = styled.h2`
   color: #e3e32a;

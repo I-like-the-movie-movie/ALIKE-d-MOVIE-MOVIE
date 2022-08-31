@@ -1,21 +1,21 @@
 {
   "reviews": [
     {
-      "id": "b9RzMzZFvRzFXAeNbTHAj",
+      "id": "1",
       "star": "5",
       "movie_title": "한산",
       "picture": "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/react-02/film-reviews/5f2ad6df-2660-4b41-ad8b-df218a404346.jpg",
       "content": "킹갓제네럴엠페러이순신"
     },
     {
-      "id": "HchbLPYQTFlwGKwa7k2MF",
+      "id": "2",
       "star": "2",
       "movie_title": "star",
       "picture": "",
       "content": "star"
     },
     {
-      "id": "hNU_OSvtl4b7KCo7FuJeE",
+      "id": "3",
       "star": "5",
       "movie_title": "탑건",
       "picture": "",

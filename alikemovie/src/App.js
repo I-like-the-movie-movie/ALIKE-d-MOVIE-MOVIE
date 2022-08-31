@@ -1,7 +1,6 @@
-import React, { useSelector } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-// import List from './components/List';
 import List2 from "./components/List2";
 import Post2 from "./components/Post2";
 import Review from "./components/Review";
