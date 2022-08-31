@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { __postReviews } from "../Redux/modules/reviewSlice";
-import { nanoid } from "@reduxjs/toolkit";
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import Logo from '../assets/logo.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { __postReviews } from '../Redux/modules/reviewSlice';
+import { nanoid } from '@reduxjs/toolkit';
 
 function Post2() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function Post2() {
   const pictureInput = useRef(null);
   const starInput = useRef(null);
 
-  const onClickHandler = (e) => {
+  const onClickHandler = e => {
     e.preventDefault();
     const addPost = {
       id: nanoid(),
@@ -32,39 +32,38 @@ function Post2() {
     <Body>
       <header>
         <Wrap>
-          <img className="logo" src={Logo} alt="로고" />
-        </Wrap>{" "}
+          <img className='logo' src={Logo} alt='로고' />
+        </Wrap>{' '}
         <button
-          className="now_movie_list"
+          className='now_movie_list'
           onClick={() => {
-            navigate("/");
-          }}
-        >
+            navigate('/');
+          }}>
           home
         </button>
       </header>
       <Divleft onSubmit={onClickHandler}>
         <h1>title</h1>
-        <input ref={titleInput} type="text" />
+        <input ref={titleInput} type='text' />
 
         <h1> star </h1>
-        <select name="star" ref={starInput}>
+        <select name='star' ref={starInput}>
           <option>star</option>
-          <option value="1">★</option>
-          <option value="2">★★</option>
-          <option value="3">★★★</option>
-          <option value="4">★★★★</option>
-          <option value="5">★★★★★</option>
+          <option value='1'>★</option>
+          <option value='2'>★★</option>
+          <option value='3'>★★★</option>
+          <option value='4'>★★★★</option>
+          <option value='5'>★★★★★</option>
         </select>
 
         <h1>contents</h1>
-        <Textarea ref={contentInput} type="text" />
+        <Textarea ref={contentInput} type='text' />
 
         <button>추가하기</button>
       </Divleft>
       <Divright>
         <h1> image </h1>
-        <input ref={pictureInput} type="file" accept="image/*"></input>
+        <input ref={pictureInput} type='file' accept='image/*'></input>
         <Preimg></Preimg>
       </Divright>
       <Divfoot>

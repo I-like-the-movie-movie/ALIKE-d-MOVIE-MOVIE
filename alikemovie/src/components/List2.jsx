@@ -1,19 +1,15 @@
-import React, { useEffect } from "react";
-import { __getReviews } from "../Redux/modules/reviewSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import Logo from "../assets/logo.svg";
-import Reviews from "./Reviews";
+import React, { useEffect } from 'react';
+import { __getReviews } from '../Redux/modules/reviewSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import Logo from '../assets/logo.svg';
+import Reviews from './Reviews';
 
 const List2 = () => {
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
-
-  const reviews = useSelector((state) => state.reviews.reviews);
-
-  console.log(reviews);
+  const reviews = useSelector(state => state.reviews.reviews);
 
   useEffect(() => {
     dispatch(__getReviews());
@@ -23,20 +19,19 @@ const List2 = () => {
     <div>
       <header>
         <div>
-          <img className="logo" src={Logo} alt="로고" />
+          <img className='logo' src={Logo} alt='로고' />
         </div>
         <button
-          className="now_movie_list"
+          className='now_movie_list'
           onClick={() => {
-            navigate("/");
-          }}
-        >
+            navigate('/');
+          }}>
           home
         </button>
       </header>
       <div>
-        {reviews.map((review) => (
-          <Reviews key={review.id} {...review} />
+        {reviews.map(review => (
+          <Reviews key={review.id} title={review.movie_title} {...review} />
         ))}
       </div>
     </div>
