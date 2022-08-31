@@ -34,9 +34,6 @@ const Lists = ({ id, movie_title, star, content, picture }) => {
           )}
         </div>
       </div>
-      <p>
-        <button>put</button> <button>del</button>
-      </p>
     </Divbox>
   );
 };

@@ -5,7 +5,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { __getReviews } from "../Redux/modules/reviewSlice";
+import { __deleteReviews, __getReviews } from "../Redux/modules/reviewSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
@@ -13,6 +13,12 @@ import Logo from "../assets/logo.svg";
 const Review = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const onClickDeleteButtonHandler = (movieID) => {
+    console.log(movieID);
+    dispatch(__deleteReviews(movieID));
+    alert("삭제가 완료 되었습니다!");
+    navigate("/list");
+  };
 
   let params = useParams();
 
@@ -31,52 +37,53 @@ const Review = () => {
         <button
           className="now_movie_list"
           onClick={() => {
-            navigate("/");
+            navigate("/list");
           }}
         >
-          home
+          영화들보러 가기
         </button>
       </header>
       <Reviews>
         {reviews
           ?.filter((el) => el.id === params.id)
-          ?.map(
-            (reviews) => (
-              console.log("movie_title", reviews.movie_title),
-              (
-                <div>
-                  <h1>post</h1>
-                  <img src={reviews.picture} />
-                  <h1>title</h1>
-                  <p>{reviews.movie_title}</p>
-                  <h1>star</h1>
-                  <p>{reviews.star}</p>
-                  <p>
-                    {reviews.star === "1" ? (
-                      <Star>⭐️</Star>
-                    ) : reviews.star === "2" ? (
-                      <Star>⭐️⭐️</Star>
-                    ) : reviews.star === "3" ? (
-                      <Star>⭐️⭐️⭐️</Star>
-                    ) : reviews.star === "4" ? (
-                      <Star>⭐️⭐️⭐️⭐️</Star>
-                    ) : reviews.star === "5" ? (
-                      <Star>⭐️⭐️⭐️⭐️⭐️</Star>
-                    ) : (
-                      reviews.star
-                    )}
-                  </p>
-                  <h1>description</h1>
-                  <p>{reviews.desc}</p>
-                  <h1>content</h1>
-                  <p>{reviews.content}</p>
-                  <p>
-                    <button>put</button> <button>del</button>
-                  </p>
-                </div>
-              )
-            )
-          )}
+          ?.map((reviews) => (
+            <div key={reviews.id}>
+              <h1>post</h1>
+              <img src={reviews.picture} alt="poster" />
+              <h1>title</h1>
+              <p>{reviews.movie_title}</p>
+              <h1>star</h1>
+              <p>{reviews.star}</p>
+              <p>
+                {reviews.star === "1" ? (
+                  <Star>⭐️</Star>
+                ) : reviews.star === "2" ? (
+                  <Star>⭐️⭐️</Star>
+                ) : reviews.star === "3" ? (
+                  <Star>⭐️⭐️⭐️</Star>
+                ) : reviews.star === "4" ? (
+                  <Star>⭐️⭐️⭐️⭐️</Star>
+                ) : reviews.star === "5" ? (
+                  <Star>⭐️⭐️⭐️⭐️⭐️</Star>
+                ) : (
+                  reviews.star
+                )}
+              </p>
+              <h1>description</h1>
+              <p>{reviews.desc}</p>
+              <h1>content</h1>
+              <p>{reviews.content}</p>
+              <p>
+                <button>Put</button>{" "}
+                <button
+                  type="button"
+                  onClick={() => onClickDeleteButtonHandler(params.id)}
+                >
+                  Del
+                </button>
+              </p>
+            </div>
+          ))}
       </Reviews>
     </div>
   );

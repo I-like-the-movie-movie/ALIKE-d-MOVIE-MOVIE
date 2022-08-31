@@ -1,14 +1,6 @@
 {
   "reviews": [
     {
-      "id": "0",
-      "movie_title": "싱크홀",
-      "content": "기대보다 별로였어요..",
-      "desc": "서울 입성과 함께 내 집 마련의 꿈을 이룬 가장 ‘동원(김성균)’ 이사 첫날부터 프로 참견러 ‘만수’(...",
-      "picture": "https://movie-phinf.pstatic.net/20210726_114/1627265960693kkM0B_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
       "id": "1",
       "movie_title": "모가디슈",
       "content": "돈 값한다.억지로 짜내는 신파가 없어서 담백하고 좋았음",
