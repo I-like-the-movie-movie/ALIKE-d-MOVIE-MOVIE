@@ -67,20 +67,13 @@ function Post2() {
         <input ref={pictureInput} type="file" accept="image/*"></input>
         <Preimg></Preimg>
       </Divright>
-      <Divfoot>
-        {/* <h1>test</h1>
-        <div>
-          {reviews?.map((review) => (
-            <div key={review.id}>{review.movie_title}</div>
-          ))}
-        </div> */}
-      </Divfoot>
+      <Divfoot></Divfoot>
     </Body>
   );
 }
 
 const Body = styled.div`
-  border: 1px solid;
+  /* border: 1px solid; */
   display: inline-block;
 
   width: 100%;
@@ -99,11 +92,11 @@ const Logobox = styled.div`
   margin: 100px auto 0 auto;
 `;
 const Divleft = styled.form`
-  border: 1px solid red;
+  border: 1px solid;
   border-radius: 30px;
 
   margin: 3%;
-  padding: 0% 2%;
+  padding: 1% 2%;
   float: left;
   width: 40%;
   height: 60%;
@@ -114,7 +107,7 @@ const Textarea = styled.textarea`
 `;
 
 const Divright = styled.div`
-  border: 1px solid green;
+  border: 1px solid;
   border-radius: 30px;
 
   margin: 3% 1%;
@@ -133,7 +126,7 @@ const Preimg = styled.div`
 `;
 
 const Divfoot = styled.div`
-  border: 1px dashed blue;
+  /* border: 1px dashed blue; */
   margin: 1% 3%;
   text-align: center;
   width: 92%;

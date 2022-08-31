@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Logo from "../assets/logo.svg";
 // import ModalReview from './Modals/ModalReview';
-import ModalInput from "./Post";
 import styled from "styled-components";
 import axios from "axios";
 

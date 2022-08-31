@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
-import Reviews from "./Reviews";
+import Lists from "./Lists";
 
 const List2 = () => {
   const dispatch = useDispatch();
@@ -13,18 +13,18 @@ const List2 = () => {
 
   const reviews = useSelector((state) => state.reviews.reviews);
 
-  console.log(reviews);
+  console.log("reviews=", reviews);
 
   useEffect(() => {
     dispatch(__getReviews());
   }, [dispatch]);
 
   return (
-    <div>
+    <Divbox>
       <header>
-        <div>
+        <Logobox>
           <img className="logo" src={Logo} alt="로고" />
-        </div>
+        </Logobox>
         <button
           className="now_movie_list"
           onClick={() => {
@@ -36,30 +36,19 @@ const List2 = () => {
       </header>
       <div>
         {reviews.map((review) => (
-          <Reviews key={review.id} {...review} />
+          <Lists key={review.id} {...review} />
         ))}
       </div>
-    </div>
+    </Divbox>
   );
 };
 
-const Wrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
+const Divbox = styled.div`
+  margin: 0px;
 `;
-
 const Logobox = styled.div`
   width: 350px;
-  margin: 100px auto 0 auto;
-`;
-
-const Div = styled.div`
-  border: 1px solid;
-  border-radius: 20px;
-  /* text-align: center; */
-  margin: 10px;
-  padding: 10px;
+  margin: 0px auto 0 auto;
 `;
 
 export default List2;

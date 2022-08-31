@@ -1,0 +1,53 @@
+import React from "react";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
+const Lists = ({ id, movie_title, star, content, picture }) => {
+  const navigate = useNavigate();
+
+  return (
+    <Divbox>
+      <div
+        onClick={() => {
+          navigate(`/review/${id}`);
+        }}
+      >
+        <div>{picture}</div>
+        <div>
+          <h1>title</h1>
+          {movie_title}
+          <h1>star</h1>
+          {star === "1" ? (
+            <Star>⭐️</Star>
+          ) : star === "2" ? (
+            <Star>⭐️⭐️</Star>
+          ) : star === "3" ? (
+            <Star>⭐️⭐️⭐️</Star>
+          ) : star === "4" ? (
+            <Star>⭐️⭐️⭐️⭐️</Star>
+          ) : star === "5" ? (
+            <Star>⭐️⭐️⭐️⭐️⭐️</Star>
+          ) : (
+            star
+          )}
+        </div>
+      </div>
+      <p>
+        <button>put</button> <button>del</button>
+      </p>
+    </Divbox>
+  );
+};
+
+const Divbox = styled.div`
+  border: 1px solid;
+  border-radius: 20px;
+  text-align: center;
+  margin: 1% 20%;
+  padding: 10px;
+`;
+const Star = styled.h2`
+  color: #e3e32a;
+`;
+
+export default Lists;

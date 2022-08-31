@@ -31,10 +31,6 @@ function Review({ star, movie_title, picture, content }) {
   );
 }
 
-const Star = styled.h2`
-  color: yellow;
-`;
-
 export default Review;
 
 // <Body>
