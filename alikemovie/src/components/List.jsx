@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 import Lists from "./Lists";
 
-const List2 = () => {
+const List = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -51,4 +51,4 @@ const Logobox = styled.div`
   margin: 0px auto 0 auto;
 `;
 
-export default List2;
+export default List;

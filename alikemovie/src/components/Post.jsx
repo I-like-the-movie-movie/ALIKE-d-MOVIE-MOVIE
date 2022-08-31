@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { __postReviews } from "../Redux/modules/reviewSlice";
 import { nanoid } from "@reduxjs/toolkit";
 
-function Post2() {
+function Post() {
   const dispatch = useDispatch();
 
   const titleInput = useRef(null);
@@ -132,4 +132,4 @@ const Divfoot = styled.div`
   width: 92%;
 `;
 
-export default Post2;
+export default Post;

@@ -3,26 +3,49 @@
 // import { useNavigate } from "react-router-dom";
 
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { __getReviews } from "../Redux/modules/reviewSlice";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Logo from "../assets/logo.svg";
 
-const Review = ({ star, movie_title, picture, content }) => {
+const Review = ({ id, star, movie_title, picture, content }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  dispatch(__getReviews);
+  const reviews = useSelector((state) => state.reviews.reviews);
 
-  console.log("title=", movie_title);
+  useEffect(() => {
+    dispatch(__getReviews());
+  }, [dispatch]);
+
+  console.log("reviews =", reviews);
+  // console.log("console.log = ", reviews.reviews[0]);
 
   return (
     <div>
-      <div>
-        <h1>title</h1>
-        {movie_title}
-
-        <h1>content</h1>
-        {content}
-      </div>
+      <header>
+        <Logobox>
+          <img className="logo" src={Logo} alt="로고" />
+        </Logobox>
+        <button
+          className="now_movie_list"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          home
+        </button>
+      </header>
+      <div>title</div>
     </div>
   );
 };
+
+const Logobox = styled.div`
+  width: 350px;
+  margin: 0px auto 0 auto;
+`;
 
 export default Review;

@@ -16,7 +16,7 @@ const Home = () => {
           <button
             className="now_movie_list"
             onClick={() => {
-              navigate("/list2");
+              navigate("/list");
             }}
           >
             지금까지의 영화들
@@ -25,7 +25,7 @@ const Home = () => {
           <button
             className="review_list"
             onClick={() => {
-              navigate("/post2");
+              navigate("/post");
             }}
           >
             리뷰쓰러 가기
