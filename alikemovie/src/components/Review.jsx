@@ -10,9 +10,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 
-const Review = ({ id, star, movie_title, picture, content }) => {
+const Review = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   let params = useParams();
 
   const reviews = useSelector((state) => state.reviews.reviews);
@@ -36,7 +37,7 @@ const Review = ({ id, star, movie_title, picture, content }) => {
           home
         </button>
       </header>
-      <div>
+      <Reviews>
         {reviews
           ?.filter((el) => el.id === params.id)
           ?.map(
@@ -44,15 +45,19 @@ const Review = ({ id, star, movie_title, picture, content }) => {
               console.log("movie_title", reviews.movie_title),
               (
                 <div>
-                  {reviews.movie_title}
-                  {reviews.star}
-                  {reviews.content}
-                  {reviews.picture}
+                  <h1>post</h1>
+                  <img src={reviews.picture} />
+                  <h1>title</h1>
+                  <p>{reviews.movie_title}</p>
+                  <h1>star</h1>
+                  <p>{reviews.star}</p>
+                  <h1>content</h1>
+                  <p>{reviews.content}</p>
                 </div>
               )
             )
           )}
-      </div>
+      </Reviews>
     </div>
   );
 };
@@ -60,6 +65,11 @@ const Review = ({ id, star, movie_title, picture, content }) => {
 const Logobox = styled.div`
   width: 350px;
   margin: 0px auto 0 auto;
+`;
+const Reviews = styled.div`
+  border: 1px solid;
+  margin: 3%;
+  padding: 10px;
 `;
 
 export default Review;

@@ -1,6 +1,6 @@
 {
   "reviews": [
-    {
+    { 
       "id": "1",
       "star": "5",
       "movie_title": "한산",
@@ -14,7 +14,6 @@
       "picture": "",
       "content": "탐크루즈가 멋있다\n비행기도 멋있다"
     }
-
   ],
   "comments": []
 }
