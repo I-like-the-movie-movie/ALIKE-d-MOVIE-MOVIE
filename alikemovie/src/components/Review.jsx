@@ -15,7 +15,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import { __getComments, __postComments } from "../Redux/modules/commentSlice";
+import { __getComments, __postComments, __deleteComments } from "../Redux/modules/commentSlice";
 
 const Review = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const Review = () => {
   const onClickDeleteButtonHandler = (movieID) => {
     console.log(movieID);
     dispatch(__deleteReviews(movieID));
-    alert("삭제가 완료 되었습니다!");
+    // alert("삭제가 완료 되었습니다!");
     navigate("/list");
   };
 
@@ -40,21 +40,16 @@ const Review = () => {
     // dispatch(__putReviews((movieID)))
     alert("내용을 수정해주세요!");
     navigate(`/put/${movieID}`);
-    // console.log(    dispatch(__deleteReviews()))
-    // console.log(typeof(params.id))
   };
 
-  // const fetchComments = async () => {
-  //   // const { comment } = await axios.get("http://localhost:3001/comments",{Id:param?.id});
-  //   const { comment } = await axios.get("http://localhost:3001/comments", {
-  //     Id: param.id,
-  //   });
-  //   setComment(...comment, comment);
-  //   // console.log("bbbb");
-  //   // console.log(comment);
-  //   //undefined
-  //   // console.log(param);
-  // };
+  // const onClickDeleteCommentHandler = (commentID) => {
+  //   console.log(commentID);
+  //   dispatch(__deleteComments((commentID)))
+  //   // alert("삭제가 완료되었습니다!");
+  //   // navigate(`/put/${commentID}`);
+  // }; 
+  
+
   const addComment = (e) => {
     e.preventDefault();
     if (comment === "") {
@@ -62,33 +57,31 @@ const Review = () => {
     }
     dispatch(
       __postComments({
-        // reviewsId:params,
         reviewsId: params.id,
         comment: comment,
       })
     );
     setComment("");
+    // navigate(`/`);
+    // navigate(`/review/${Number(params.id)}`);
+    // console.log(params.id)
+    // console.log(typeof(params.id))
+
   };
   const commentHandle = (e) => {
     setComment(e.target.value);
   };
   useEffect(() => {
-    // dispatch(getBoardAsync(params));
-    // fetchComments();
     dispatch(__getReviews());
     dispatch(__getComments());
+    // dispatch(__deleteComments());
   }, [dispatch]);
 
   let params = useParams();
-  // console.log(comment)
-  // console.log(paramsComment)
-
   const reviews = useSelector((state) => state.reviews.reviews);
   const comments = useSelector((state) => state.comments.comments);
-
-  const filteredComments = comments.filter((el)=> el.reviewsId === id )
-
-  console.log(filteredComments)
+  const filteredComments = comments.filter((el)=> el.reviewsId === id );
+  // console.log(filteredComments)
   
   return (
     <div>
@@ -160,6 +153,13 @@ const Review = () => {
             (comment) => (
               <div key={comment.id}>
               <p>{comment.comment}</p>
+              {/* <button onClick={onClickDeleteCommentHandler(comment.id)}>
+                del
+              </button> */}
+              <button >
+                put
+              </button>
+
               </div>
             ))
         }        

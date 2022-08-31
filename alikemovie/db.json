@@ -1,14 +1,6 @@
 {
   "reviews": [
     {
-      "id": "5",
-      "movie_title": "test",
-      "content": "sdfsdf",
-      "desc": "미지의 세계 아마존에서 관광객들에게 최고의 스릴을 선사하는재치 넘치는 크루즈 선장 프랭크(드웨인 ...",
-      "picture": "",
-      "star": "3"
-    },
-    {
       "id": "7",
       "movie_title": "ㄴㅇㄹㄴㅇㄹ",
       "content": "ㄴㅇㄹㄴㅇㄹ",
@@ -172,18 +164,73 @@
   "comments": [
     {
       "reviewsId": "9",
-      "comment": "test",
-      "id": "4"
+      "comment": "댓글달아보시지sdfsdfd",
+      "id": 1
     },
     {
       "reviewsId": "9",
-      "comment": "해치웠나",
-      "id": "5"
+      "comment": "11111111",
+      "id": 2
     },
     {
       "reviewsId": "9",
-      "comment": "댓글달아보시지test",
-      "id": "IDSf6RW"
+      "comment": "댓글달아보시지aaaaaa",
+      "id": 3
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 4
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지11222",
+      "id": 5
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지dddd",
+      "id": 6
+    },
+    {
+      "reviewsId": "9",
+      "comment": "sdfsdf댓글달아보시지",
+      "id": 7
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 8
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 9
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 10
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 11
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 12
+    },
+    {
+      "reviewsId": "9",
+      "comment": "aaaaaaa댓글달아보시지",
+      "id": 13
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지",
+      "id": 14
     }
   ]
 }

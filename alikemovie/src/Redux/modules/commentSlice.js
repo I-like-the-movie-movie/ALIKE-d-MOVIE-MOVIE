@@ -51,6 +51,23 @@ export const __getComments = createAsyncThunk(
 
   }
 );
+
+export const __deleteComments = createAsyncThunk(
+  "comments/deleteComments",
+  async (payload, thunkAPI) => {
+    try {
+      const data = await axios.delete(url2+"/"+payload);
+      console.log(data);
+      return thunkAPI.fulfillWithValue(data.data);
+      // console.log(data);
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error);
+    }
+
+  }
+);
+
 // export const updateUser2 = createAsyncThunk(
 //   "users/update", 
 //   async (user) => {
