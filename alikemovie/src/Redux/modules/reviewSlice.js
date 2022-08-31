@@ -48,13 +48,7 @@ export const __patchReviews = createAsyncThunk(
   "reviews/patchReviews",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.patch(`http://localhost:3001/reviews/${payload.id}`, {
-        star: payload.star,
-        movie_title : payload.movie_title,
-        picture: payload.picture,
-        content : payload.content,
-
-      }
+      const data = await axios.patch(`http://localhost:3001/reviews/${payload.id}`, payload
       
       );
       return thunkAPI.fulfillWithValue(data.data);

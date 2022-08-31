@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,6 +16,7 @@ function Put() {
   const starInput = useRef(null);
 
   const reviews = useSelector((state) => state.reviews.reviews);
+  let {id} = useParams();
 
   console.log(reviews)
   console.log(reviews[0].id)
@@ -24,13 +25,13 @@ function Put() {
     // dispatch(__deleteReviews())
     dispatch(__getReviews());
   }, []);
-
+  // console.log(params.id)  
 
 
   const onClickHandler = (e) => {
     e.preventDefault();
     const editPost = {
-      
+      id  ,
       star: starInput.current.value,
       movie_title: titleInput.current.value,
       picture: pictureInput.current.value,

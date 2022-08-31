@@ -2,11 +2,11 @@
   "reviews": [
     {
       "id": "5",
-      "movie_title": "정글 크루즈",
-      "content": "디즈니의 영화는 기본이상은 한다",
+      "movie_title": "test",
+      "content": "sdfsdf",
       "desc": "미지의 세계 아마존에서 관광객들에게 최고의 스릴을 선사하는재치 넘치는 크루즈 선장 프랭크(드웨인 ...",
-      "picture": "https://movie-phinf.pstatic.net/20210715_64/1626327374894hunxa_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
+      "picture": "",
+      "star": "3"
     },
     {
       "id": "7",
