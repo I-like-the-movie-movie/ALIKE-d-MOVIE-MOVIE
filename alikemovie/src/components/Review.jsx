@@ -20,10 +20,6 @@ const Review = () => {
     dispatch(__deleteReviews((movieID)))
     alert("삭제가 완료 되었습니다!")
     navigate("/list")
-    // console.log(    dispatch(__deleteReviews()))
-    console.log(typeof(params.id))
-    console.log(params.id)
-    console.log(params)
   };
 
   const onClickPutButtonHandler = (movieID) => {

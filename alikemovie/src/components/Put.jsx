@@ -34,7 +34,7 @@ function Put() {
       id  ,
       star: starInput.current.value,
       movie_title: titleInput.current.value,
-      picture: pictureInput.current.value,
+      // picture: pictureInput.current.value,
       content: contentInput.current.value,
     };
     console.log(editPost)
@@ -79,10 +79,9 @@ function Put() {
       </Divleft>
       <Divright>
         <h1> image </h1>
-        <input ref={pictureInput} type="file" accept="image/*"
-        placeholder="내용을 입력하세요."
+        <input ref={pictureInput} type="text"
         ></input>
-        <Preimg></Preimg>
+        {/* <Preimg></Preimg> */}
       </Divright>
       <Divfoot></Divfoot>
     </Body>
