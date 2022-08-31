@@ -51,6 +51,23 @@ const Review = () => {
                   <p>{reviews.movie_title}</p>
                   <h1>star</h1>
                   <p>{reviews.star}</p>
+                  <p>
+                    {reviews.star === "1" ? (
+                      <Star>⭐️</Star>
+                    ) : reviews.star === "2" ? (
+                      <Star>⭐️⭐️</Star>
+                    ) : reviews.star === "3" ? (
+                      <Star>⭐️⭐️⭐️</Star>
+                    ) : reviews.star === "4" ? (
+                      <Star>⭐️⭐️⭐️⭐️</Star>
+                    ) : reviews.star === "5" ? (
+                      <Star>⭐️⭐️⭐️⭐️⭐️</Star>
+                    ) : (
+                      reviews.star
+                    )}
+                  </p>
+                  <h1>description</h1>
+                  <p>{reviews.desc}</p>
                   <h1>content</h1>
                   <p>{reviews.content}</p>
                 </div>
@@ -68,8 +85,12 @@ const Logobox = styled.div`
 `;
 const Reviews = styled.div`
   border: 1px solid;
+  border-radius: 30px;
+  text-align: center;
   margin: 3%;
   padding: 10px;
 `;
-
+const Star = styled.h2`
+  color: #e3e32a;
+`;
 export default Review;
