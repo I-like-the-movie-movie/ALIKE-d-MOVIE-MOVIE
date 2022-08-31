@@ -1,27 +1,30 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { __postReviews } from "../Redux/modules/reviewSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
 function Post2() {
-  const [review, setReview] = useState({
-    movie_title: "",
-  });
-  const [reviews, setReviews] = useState(null);
+  const dispatch = useDispatch();
 
-  const fetchReviews = async () => {
-    const { data } = await axios.get("http://localhost:3001/reviews");
-    setReviews(data);
+  const titleInput = useRef(null);
+  const contentInput = useRef(null);
+  const pictureInput = useRef(null);
+  const starInput = useRef(null);
+
+  const onClickHandler = (e) => {
+    e.preventDefault();
+    const addPost = {
+      id: nanoid(),
+      star: starInput.current.value,
+      movie_title: titleInput.current.value,
+      picture: pictureInput.current.value,
+      content: contentInput.current.value,
+    };
+    dispatch(__postReviews(addPost));
   };
-
-  const onSubmitHandler = (review) => {
-    axios.post("http://localhost:3001/reviews", review);
-  };
-
-  useEffect(() => {
-    fetchReviews();
-  }, []);
 
   const navigate = useNavigate();
 
@@ -40,70 +43,37 @@ function Post2() {
           home
         </button>
       </header>
-      <Divleft
-        onSubmit={(e) => {
-          // 👇 submit했을 때 브라우저의 새로고침을 방지합니다.
-          // e.preventDefault();
-          onSubmitHandler(review);
-        }}
-      >
-        <p>
-          <h1>title</h1>
-          <input
-            type="text"
-            onChange={(ev) => {
-              const { value } = ev.target;
-              setReview({
-                ...review,
-                movie_title: value,
-              });
-            }}
-          />
-        </p>
-        <p>
-          <h1> star </h1>
-          <input
-            type="text"
-            onChange={(ev) => {
-              const { value } = ev.target;
-              setReview({
-                ...review,
-                star: value,
-              });
-            }}
-          />
-        </p>
-        <p>
-          <h1>contents</h1>
-          <Textarea
-            type="text"
-            onChange={(ev) => {
-              const { value } = ev.target;
-              setReview({
-                ...review,
-                content: value,
-              });
-            }}
-          />
-        </p>
-        <p>
-          <button>추가하기</button>
-        </p>
+      <Divleft onSubmit={onClickHandler}>
+        <h1>title</h1>
+        <input ref={titleInput} type="text" />
+
+        <h1> star </h1>
+        <select name="star" ref={starInput}>
+          <option>star</option>
+          <option value="1">★</option>
+          <option value="2">★★</option>
+          <option value="3">★★★</option>
+          <option value="4">★★★★</option>
+          <option value="5">★★★★★</option>
+        </select>
+
+        <h1>contents</h1>
+        <Textarea ref={contentInput} type="text" />
+
+        <button>추가하기</button>
       </Divleft>
       <Divright>
-        <p>
-          <h1> image </h1>
-          <input type="file" accept="image/*"></input>
-          <Preimg></Preimg>
-        </p>
+        <h1> image </h1>
+        <input ref={pictureInput} type="file" accept="image/*"></input>
+        <Preimg></Preimg>
       </Divright>
       <Divfoot>
-        <h1>post2</h1>
+        {/* <h1>test</h1>
         <div>
           {reviews?.map((review) => (
             <div key={review.id}>{review.movie_title}</div>
           ))}
-        </div>
+        </div> */}
       </Divfoot>
     </Body>
   );

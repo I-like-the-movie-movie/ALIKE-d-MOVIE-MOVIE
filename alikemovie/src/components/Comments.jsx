@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-function Coments() {
+function Comments() {
   const [review, setReview] = useState({
     movie_title: "",
   });
@@ -92,4 +92,4 @@ function Coments() {
   );
 }
 
-export default Coments;
+export default Comments;
