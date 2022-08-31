@@ -169,5 +169,46 @@
       "star": "4"
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "reviewsId": "9",
+      "comment": "test",
+      "id": 4
+    },
+    {
+      "reviewsId": "9",
+      "comment": "해치웠나",
+      "id": 5
+    },
+    {
+      "reviewsId": "9",
+      "comment": "adsf",
+      "id": 6
+    },
+    {
+      "reviewsId": "9",
+      "comment": "asdfsadf",
+      "id": 7
+    },
+    {
+      "reviewsId": "9",
+      "comment": "asdf",
+      "id": 9
+    },
+    {
+      "reviewsId": "9",
+      "comment": "a",
+      "id": 10
+    },
+    {
+      "reviewsId": "9",
+      "comment": "qqqqqqqq",
+      "id": 11
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지zzz",
+      "id": 12
+    }
+  ]
 }
