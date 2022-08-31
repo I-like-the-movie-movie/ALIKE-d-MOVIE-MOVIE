@@ -13,7 +13,7 @@ const Lists = ({ id, movie_title, star, content, picture }) => {
         }}
       >
         <div>
-          <img src={picture} />
+          <img src={picture} alt="poster" width="170" height="200" />
         </div>
         <div>
           <h1>title</h1>

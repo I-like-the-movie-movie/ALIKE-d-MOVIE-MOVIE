@@ -48,8 +48,12 @@ const Review = () => {
           ?.filter((el) => el.id === params.id)
           ?.map((reviews) => (
             <div key={reviews.id}>
-              <h1>post</h1>
-              <img src={reviews.picture} alt="poster" />
+              <img
+                src={reviews.picture}
+                alt="poster"
+                width="170"
+                height="200"
+              />
               <h1>title</h1>
               <p>{reviews.movie_title}</p>
               <h1>star</h1>
