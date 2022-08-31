@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 
-import { __postReviews, __getReviews, __putReviews } from "../Redux/modules/reviewSlice";
+import { __postReviews, __getReviews, __patchReviews } from "../Redux/modules/reviewSlice";
 import { nanoid } from "@reduxjs/toolkit";
 
 function Put() {
@@ -30,14 +30,14 @@ function Put() {
   const onClickHandler = (e) => {
     e.preventDefault();
     const editPost = {
-      id: "",
+      
       star: starInput.current.value,
       movie_title: titleInput.current.value,
       picture: pictureInput.current.value,
       content: contentInput.current.value,
     };
     console.log(editPost)
-    dispatch(__putReviews(editPost));
+    dispatch(__patchReviews(editPost));
   };
 
   const navigate = useNavigate();
