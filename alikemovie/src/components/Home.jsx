@@ -14,18 +14,20 @@ const Home = () => {
   });
   const [reviews, setReviews] = useState(null);
 
-  const fetchReviews = async () => {
-    const { data } = await axios.get("http://localhost:3001/reviews");
-    setReviews(data);
-  };
+  // const fetchReviews = async () => {
+  //   const { data } = await axios.get("http://localhost:3001/reviews");
+  //   setReviews(data);
+  // };
+
+  const navigate = useNavigate();
 
   const onSubmitHandler = (review) => {
     axios.post("http://localhost:3001/reviews", review);
   };
 
-  useEffect(() => {
-    fetchReviews();
-  }, []);
+  // useEffect(() => {
+  //   fetchReviews();
+  // }, []);
 
   return (
     <>
@@ -36,7 +38,7 @@ const Home = () => {
           <button
             className="now_movie_list"
             onClick={() => {
-              navigate("/list");
+              navigate("/list2");
             }}
           >
             지금까지의 영화들
@@ -45,7 +47,7 @@ const Home = () => {
           <button
             className="review_list"
             onClick={() => {
-              navigate("/post");
+              navigate("/post2");
             }}
           >
             리뷰쓰러 가기
