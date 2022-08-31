@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { __postReviews } from "../Redux/modules/reviewSlice";
 import { nanoid } from "@reduxjs/toolkit";
 

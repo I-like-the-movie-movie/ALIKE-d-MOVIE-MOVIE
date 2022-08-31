@@ -6,22 +6,20 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { __getReviews } from "../Redux/modules/reviewSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 
 const Review = ({ id, star, movie_title, picture, content }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  let params = useParams();
 
   const reviews = useSelector((state) => state.reviews.reviews);
 
   useEffect(() => {
     dispatch(__getReviews());
   }, [dispatch]);
-
-  console.log("reviews =", reviews);
-  // console.log("console.log = ", reviews.reviews[0]);
 
   return (
     <div>
@@ -38,7 +36,23 @@ const Review = ({ id, star, movie_title, picture, content }) => {
           home
         </button>
       </header>
-      <div>title</div>
+      <div>
+        {reviews
+          ?.filter((el) => el.id === params.id)
+          ?.map(
+            (reviews) => (
+              console.log("movie_title", reviews.movie_title),
+              (
+                <div>
+                  {reviews.movie_title}
+                  {reviews.star}
+                  {reviews.content}
+                  {reviews.picture}
+                </div>
+              )
+            )
+          )}
+      </div>
     </div>
   );
 };

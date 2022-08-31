@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Lists = ({ id, movie_title, star, content, picture }) => {
   const navigate = useNavigate();
+
+  let params = useParams();
+  console.log(params);
 
   return (
     <Divbox>

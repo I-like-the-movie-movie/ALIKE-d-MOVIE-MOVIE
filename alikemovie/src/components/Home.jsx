@@ -11,7 +11,6 @@ const Home = () => {
     <>
       <div className="home_wrap">
         <img className="logo" src={Logo} alt="로고" />
-
         <div className="list_button">
           <button
             className="now_movie_list"
@@ -21,7 +20,6 @@ const Home = () => {
           >
             지금까지의 영화들
           </button>
-
           <button
             className="review_list"
             onClick={() => {
