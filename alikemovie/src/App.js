@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import List from "./components/List";
 import Post from "./components/Post";
 import Review from "./components/Review";
+import Put from "./components/Put";
 
 const App = () => {
   return (
@@ -14,6 +15,8 @@ const App = () => {
         <Route path="/list" element={<List />}></Route>
         <Route path="/review" element={<Review />}></Route>
         <Route path="/review/:id" element={<Review />} />
+        <Route path="/put/:id" element={<Put />} />
+
       </Routes>
     </BrowserRouter>
   );

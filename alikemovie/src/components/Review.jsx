@@ -5,7 +5,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { __deleteReviews, __getReviews } from "../Redux/modules/reviewSlice";
+import { __deleteReviews, __getReviews, __putReviews } from "../Redux/modules/reviewSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
@@ -24,6 +24,17 @@ const Review = () => {
     console.log(typeof(params.id))
     console.log(params.id)
     console.log(params)
+  };
+
+  const onClickPutButtonHandler = (movieID) => {
+    console.log(movieID)
+    // dispatch(__putReviews((movieID)))
+    alert("내용을 수정해주세요!")
+    navigate(`/put/${movieID}`)
+    // console.log(    dispatch(__deleteReviews()))
+    // console.log(typeof(params.id))
+    // console.log(params.id)
+    // console.log(params)
   };
 
   let params = useParams();
@@ -82,15 +93,19 @@ const Review = () => {
                   <h1>content</h1>
                   <p>{reviews.content}</p>
 
-                  <p>
-                    <button>put</button>
-                  </p>
                   <div>
                     
                     <button
                       type="button"
                       onClick={() => onClickDeleteButtonHandler(params.id)}
                     >del</button>
+                  </div>
+                  <div>
+                  <button
+                      type="button"
+                      onClick={() => onClickPutButtonHandler(params.id)}
+                    >put</button>
+
                   </div>
                 </div>
               )
