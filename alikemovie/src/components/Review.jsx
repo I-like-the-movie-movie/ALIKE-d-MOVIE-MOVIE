@@ -9,7 +9,7 @@ import {useDispatch, useSelector} from "react-redux"
 
 function Review() {
 
-const [coments, setComments] = useState(null);
+// const [coments, setComments] = useState(null);
 
 const [detailreviews, setDetailReviews] = useState(null);
 const location = useLocation();
@@ -18,33 +18,34 @@ const [comment,setComment] = useState("")
 const {id} = useParams()
 const params = parseInt(id)
 const dispatch = useDispatch();
+// const { isLoading, error, comments } = useSelector((state) => state.comments);
 
 
 		// 훅을 사용해서 생성한 param을 콘솔에 찍어봅시다.
-  // console.log(param);
-  // console.log(detailreviews[param.id])
-  console.log(param.id)
-  console.log(typeof param.id)
-  console.log(Number(param.id))
-  console.log(detailreviews)
+  // console.log(param.id)
+  // console.log(typeof param.id)
+  // console.log(Number(param.id))
+  // console.log(detailreviews)
   // axios.get('https://localhost:4000/sendlist/todo', {userId: userId},
 
   const fetchDetailReviews = async () => {
     const { data } = await axios.get("http://localhost:3001/reviews",{Id:param?.id});
     setDetailReviews(data);
-    const { comment } = await axios.get("http://localhost:3001/comments",{Id:param?.id});
-
-    setComment(comment)
-    console.log('bbbb');
-    console.log(data);
-    console.log(param.id);
+    // const { comment } = await axios.get("http://localhost:3001/comments",{Id:param?.id});
+    // setComment(comment)
+    // console.log('bbbb');
+    // console.log(data);
+    // console.log(param.id);
   };
   const fetchComments = async () => {
+    // const { comment } = await axios.get("http://localhost:3001/comments",{Id:param?.id});
     const { comment } = await axios.get("http://localhost:3001/comments",{Id:param?.id});
-
     setComment(comment)
     console.log('bbbb');
     console.log(comment);
+    //undefined
+    console.log(param);
+
   };
 
 
@@ -113,8 +114,8 @@ const commentHandle = (e) => {
             댓글은 여기에
           </div>
           {/* <div>
-          {comment?.map((comment) => (
-            <div key={comments.id}>{comment.comment}</div>
+          {comments?.map((comment) => (
+            <div key={comment.id}>{comment.comment}</div>
           ))}
 
           </div> */}

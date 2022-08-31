@@ -52,9 +52,19 @@
       "id": 2
     },
     {
-      "reviewsId": 3,
-      "comment": "너무 재밌어요",
+      "reviewsId": 1,
+      "comment": "test11",
       "id": 3
+    },
+    {
+      "reviewsId": 1,
+      "comment": "test11",
+      "id": 4
+    },
+    {
+      "reviewsId": 1,
+      "comment": "aaaa",
+      "id": 5
     }
   ],
   "profile": {
