@@ -26,7 +26,7 @@ const Review = () => {
   const [comment, setComment] = useState("댓글달아보시지");
   const { id } = useParams();
 
-  
+  console.log(typeof(id))
   const paramsComment = parseInt(id);
   const onClickDeleteButtonHandler = (movieID) => {
     console.log(movieID);
@@ -84,8 +84,12 @@ const Review = () => {
   // console.log(paramsComment)
 
   const reviews = useSelector((state) => state.reviews.reviews);
-  const comments = useSelector((state) => state.comments);
-  console.log(comments)
+  const comments = useSelector((state) => state.comments.comments);
+
+  const filteredComments = comments.filter((el)=> el.reviewsId === id )
+
+  console.log(filteredComments)
+  
   return (
     <div>
       <header>
@@ -150,7 +154,17 @@ const Review = () => {
             )
           )}
       </Reviews>
-    </div>
+      <Comments>
+      {filteredComments
+          .map(
+            (comment) => (
+              <div key={comment.id}>
+              <p>{comment.comment}</p>
+              </div>
+            ))
+        }        
+      </Comments>
+        </div>
   );
 };
 
@@ -163,6 +177,12 @@ const Reviews = styled.div`
   margin: 3%;
   padding: 10px;
 `;
+const Comments = styled.div`
+  border: 1px solid;
+  margin: 3%;
+  padding: 10px;
+`;
+
 const Comment = styled.div``;
 
 const CommentContainer = styled.form`
