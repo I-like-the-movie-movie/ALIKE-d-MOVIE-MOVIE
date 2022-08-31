@@ -70,6 +70,9 @@ const Review = () => {
                   <p>{reviews.desc}</p>
                   <h1>content</h1>
                   <p>{reviews.content}</p>
+                  <p>
+                    <button>put</button> <button>del</button>
+                  </p>
                 </div>
               )
             )
