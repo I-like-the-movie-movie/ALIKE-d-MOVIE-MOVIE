@@ -1,13 +1,14 @@
 {
   "reviews": [
     {
-      "id": "b9RzMzZFvRzFXAeNbTHAj",
+      "id": "1",
       "star": "5",
       "movie_title": "한산",
-      "picture": "",
+      "picture": "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/react-02/film-reviews/5f2ad6df-2660-4b41-ad8b-df218a404346.jpg",
       "content": "킹갓제네럴엠페러이순신"
     },
     {
+<<<<<<< HEAD
       "id": "HchbLPYQTFlwGKwa7k2MF",
       "star": "2",
       "movie_title": "바보",
@@ -20,7 +21,15 @@
       "movie_title": "ㅋㅋㅋ",
       "picture": "C:\\fakepath\\스크린샷 2022-08-31 01.08.51.png",
       "content": "힝"
+=======
+      "id": "2",
+      "star": "5",
+      "movie_title": "탑건",
+      "picture": "",
+      "content": "탐크루즈가 멋있다\n비행기도 멋있다"
+>>>>>>> f2e9e9349ffaca7311d0fcced07cf6bdc418b138
     }
+
   ],
   "comments": []
 }

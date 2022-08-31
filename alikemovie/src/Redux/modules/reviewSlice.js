@@ -7,18 +7,6 @@ const initialState = {
   error: null,
 };
 
-export const __putReviews = createAsyncThunk(
-  "reviews/putReviews",
-  async (payload, thunkAPI) => {
-    try {
-      const data = await axios.put("http://localhost:3001/reviews");
-      return thunkAPI.fulfillWithValue(data.data);
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-); //put del id를 특정
-
 export const __postReviews = createAsyncThunk(
   "reviews/postReviews",
   async (payload, thunkAPI) => {
@@ -42,6 +30,18 @@ export const __getReviews = createAsyncThunk(
     }
   }
 );
+
+export const __putReviews = createAsyncThunk(
+  "reviews/putReviews",
+  async (payload, thunkAPI) => {
+    try {
+      const data = await axios.put("http://localhost:3001/reviews");
+      return thunkAPI.fulfillWithValue(data.data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+); //put del id를 특정
 
 export const reviewsSlice = createSlice({
   name: "reviews",
