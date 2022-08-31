@@ -3,24 +3,52 @@
 // import { useNavigate } from "react-router-dom";
 
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { __getReviews } from "../Redux/modules/reviewSlice";
+import { __deleteReviews, __getReviews } from "../Redux/modules/reviewSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
+import axios from "axios";
+
 
 const Review = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const onClickDeleteButtonHandler = (movieID) => {
+    console.log(movieID)
+    dispatch(__deleteReviews((movieID)))
+    alert("삭제가 완료 되었습니다!")
+    navigate("/list")
+    // console.log(    dispatch(__deleteReviews()))
+    console.log(typeof(params.id))
+    console.log(params.id)
+    console.log(params)
+  };
 
   let params = useParams();
 
   const reviews = useSelector((state) => state.reviews.reviews);
 
   useEffect(() => {
+    // dispatch(__deleteReviews())
     dispatch(__getReviews());
   }, [dispatch]);
+
+  const commentHandle = (e) => {
+    // setComment(e.target.value)
+  }
+    // useEffect(() => {
+    //   fetchComments();
+    //   dispatch(__getComments(params));
+    // }, []);
+
+    // const fetchDetailReviews = async () => {
+    //   // const { data } = await axios.get("http://localhost:3001/reviews",{Id:param?.id});
+    //   setDetailReviews(data);
+    // };
+
+
 
   return (
     <div>
@@ -39,20 +67,31 @@ const Review = () => {
       </header>
       <Reviews>
         {reviews
-          ?.filter((el) => el.id === params.id)
-          ?.map(
+          .filter((el) => el.id === params.id)
+          .map(
             (reviews) => (
               console.log("movie_title", reviews.movie_title),
               (
-                <div>
+                <div key={reviews.id} >
                   <h1>post</h1>
-                  <img src={reviews.picture} />
+                  <img src={reviews.picture} alt="poster"/>
                   <h1>title</h1>
                   <p>{reviews.movie_title}</p>
                   <h1>star</h1>
                   <p>{reviews.star}</p>
                   <h1>content</h1>
                   <p>{reviews.content}</p>
+
+                  <p>
+                    <button>put</button>
+                  </p>
+                  <div>
+                    
+                    <button
+                      type="button"
+                      onClick={() => onClickDeleteButtonHandler(params.id)}
+                    >del</button>
+                  </div>
                 </div>
               )
             )

@@ -19,6 +19,19 @@ export const __postReviews = createAsyncThunk(
   }
 );
 
+export const __deleteReviews = createAsyncThunk(
+  "reviews/deleteReviews",
+  async (payload, thunkAPI) => {
+    try {
+      const data = await axios.delete(`http://localhost:3001/reviews/${payload}`);
+      console.log('deletetest')
+      return thunkAPI.fulfillWithValue(payload);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
 export const __getReviews = createAsyncThunk(
   "reviews/getReviews",
   async (payload, thunkAPI) => {
@@ -63,6 +76,7 @@ export const reviewsSlice = createSlice({
       state.isLoading = false;
       state.reviews.push(action.payload);
     },
+    
   },
 });
 

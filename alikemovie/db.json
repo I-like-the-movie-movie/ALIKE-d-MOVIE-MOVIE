@@ -1,59 +1,11 @@
 {
   "reviews": [
     {
-      "id": "0",
-      "movie_title": "싱크홀",
-      "content": "기대보다 별로였어요..",
-      "desc": "서울 입성과 함께 내 집 마련의 꿈을 이룬 가장 ‘동원(김성균)’ 이사 첫날부터 프로 참견러 ‘만수’(...",
-      "picture": "https://movie-phinf.pstatic.net/20210726_114/1627265960693kkM0B_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
-      "id": "1",
-      "movie_title": "모가디슈",
-      "content": "돈 값한다.억지로 짜내는 신파가 없어서 담백하고 좋았음",
-      "desc": "내전으로 고립된 낯선 도시, 모가디슈지금부터 우리의 목표는 오로지 생존이다!대한민국이 UN가입을 위...",
-      "picture": "https://movie-phinf.pstatic.net/20210728_297/1627455490166xkeCf_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
-      "id": "2",
-      "movie_title": "프리 가이",
-      "content": "이거볼까요?싱크홀볼까요?공감 이거 비공 싱크홀 해주세여",
-      "desc": "평범한 직장, 절친 그리고 한 잔의 커피. 평화로운 일상 속 때론 총격전과 날강도가 나타나는 버라이어...",
-      "picture": "https://movie-phinf.pstatic.net/20210721_243/1626844891093xnPK1_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
-      "id": "3",
-      "movie_title": "보스 베이비 2",
-      "content": "가볍게 보러갔다가 감동까지 느끼고 옵니다올해 봤던 애니메이션 중에 제일 재밌게 봤네요",
-      "desc": "베이비 주식회사의 레전드 보스 베이비에서 인생 만렙 CEO가 된 ‘테드’.베이비인 줄 알았던 조카 ‘티...",
-      "picture": "https://movie-phinf.pstatic.net/20210622_174/1624324910624JhEq2_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "5"
-    },
-    {
-      "id": "4",
-      "movie_title": "더 수어사이드 스쿼드",
-      "content": "사방에 또라이들 천지네ㅋㅋ",
-      "desc": "살고 싶다면 무조건 성공시켜라!최강 우주 빌런에 맞선, 자살특공대에게 맡겨진 ‘더’ 대책 없는 작전....",
-      "picture": "https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
       "id": "5",
       "movie_title": "정글 크루즈",
       "content": "디즈니의 영화는 기본이상은 한다",
       "desc": "미지의 세계 아마존에서 관광객들에게 최고의 스릴을 선사하는재치 넘치는 크루즈 선장 프랭크(드웨인 ...",
       "picture": "https://movie-phinf.pstatic.net/20210715_64/1626327374894hunxa_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
-      "id": "6",
-      "movie_title": "방법: 재차의",
-      "content": "요가자세로 관절꺾어 악귀 응징하는  한국의 퇴마사(방법사)와 관절풀고 집단런닝하는 재차의 내세운 인도네시아 주술사(두꾼)가 싸우는데, 진짜 섬찟한 것은 돈에 환장한 우먼 인 레드.",
-      "desc": "되살아난 시체 '재차의'(在此矣)가 살인을 저질렀다!살인사건 현장에서 피해자와 함께 용의자도 사체로 ...",
-      "picture": "https://movie-phinf.pstatic.net/20210719_225/1626671578245ptE5v_JPEG/movie_picture.jpg?type=m665_443_2",
       "star": "4"
     },
     {
@@ -63,14 +15,6 @@
       "desc": "행복한 휴가를 떠난 5명의 여행객.그러나 우연히 상어에 의해 훼손된 시체를 발견하고그들의 여행은 순...",
       "picture": "https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_picture.jpg?type=m665_443_2",
       "star": "5"
-    },
-    {
-      "id": "8",
-      "movie_title": "그린 나이트",
-      "content": "A24는 진짜 이상한것 같다 왜 계속 작품 잘뽑지? 굉장히 새롭고 못보던 영환데 진짜 좋다. 영상미랑 분위기 미쳤다데이빗 로워리씨 이렇게 영화 만들면 할리우드 거장 밖에 못해요",
-      "desc": "크리스마스 이브, 아서왕과 원탁의 기사들 앞에 나타난 녹색 기사,“가장 용맹한 자, 나의 목을 내리치...",
-      "picture": "https://movie-phinf.pstatic.net/20210728_155/16274361314942FPXi_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
     },
     {
       "id": "9",

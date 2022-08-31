@@ -13,7 +13,7 @@ const Lists = ({ id, movie_title, star, content, picture }) => {
         }}
       >
         <div>
-          <img src={picture} />
+          <img src={picture} alt="poster"/>
         </div>
         <div>
           <h1>title</h1>
@@ -34,9 +34,6 @@ const Lists = ({ id, movie_title, star, content, picture }) => {
           )}
         </div>
       </div>
-      <p>
-        <button>put</button> <button>del</button>
-      </p>
     </Divbox>
   );
 };
