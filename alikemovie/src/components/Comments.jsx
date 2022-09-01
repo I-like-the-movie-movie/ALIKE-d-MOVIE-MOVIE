@@ -1,20 +1,20 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 function Comments() {
   const [review, setReview] = useState({
-    movie_title: "",
+    movie_title: '',
   });
   const [reviews, setReviews] = useState(null);
 
   const fetchReviews = async () => {
-    const { data } = await axios.get("http://localhost:3001/reviews");
+    const { data } = await axios.get('http://localhost:3001/reviews');
     setReviews(data);
   };
 
-  const onSubmitHandler = (review) => {
-    axios.post("http://localhost:3001/reviews", review);
+  const onSubmitHandler = review => {
+    axios.post('http://localhost:3001/reviews', review);
   };
 
   useEffect(() => {
@@ -24,17 +24,16 @@ function Comments() {
   return (
     <Body>
       <Divleft
-        onSubmit={(e) => {
+        onSubmit={e => {
           // 👇 submit했을 때 브라우저의 새로고침을 방지합니다.
           // e.preventDefault();
           onSubmitHandler(review);
-        }}
-      >
+        }}>
         <p>
           <h1>title</h1>
           <input
-            type="text"
-            onChange={(ev) => {
+            type='text'
+            onChange={ev => {
               const { value } = ev.target;
               setReview({
                 ...review,
@@ -46,8 +45,8 @@ function Comments() {
         <p>
           <h1> star </h1>
           <input
-            type="text"
-            onChange={(ev) => {
+            type='text'
+            onChange={ev => {
               const { value } = ev.target;
               setReview({
                 ...review,
@@ -59,8 +58,8 @@ function Comments() {
         <p>
           <h1>contents</h1>
           <Textarea
-            type="text"
-            onChange={(ev) => {
+            type='text'
+            onChange={ev => {
               const { value } = ev.target;
               setReview({
                 ...review,
@@ -76,14 +75,14 @@ function Comments() {
       <Divright>
         <p>
           <h1> image </h1>
-          <input type="file" accept="image/*"></input>
+          <input type='file' accept='image/*'></input>
           <Preimg></Preimg>
         </p>
       </Divright>
       <Divfoot>
         <h1>post2</h1>
         <div>
-          {reviews?.map((review) => (
+          {reviews?.map(review => (
             <div key={review.id}>{review.movie_title}</div>
           ))}
         </div>

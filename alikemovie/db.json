@@ -34,19 +34,19 @@
     },
     {
       "id": "5",
-      "movie_title": "정글 크루즈",
-      "content": "디즈니의 영화는 기본이상은 한다",
+      "movie_title": "test",
+      "content": "sdfsdf",
       "desc": "미지의 세계 아마존에서 관광객들에게 최고의 스릴을 선사하는재치 넘치는 크루즈 선장 프랭크(드웨인 ...",
-      "picture": "https://movie-phinf.pstatic.net/20210715_64/1626327374894hunxa_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
+      "picture": "",
+      "star": "3"
     },
     {
       "id": "7",
-      "movie_title": "더 그레이트 샤크",
-      "content": "섬과  바다의 영상미는  좋지만,  내용의 전개와  긴장감이  없고  식상하며.. 상어와의 사투씬이 진부합니다. 감독과  제작진이~ 영화를  너무  못만들었네요.",
+      "movie_title": "ㄴㅇㄹㄴㅇㄹ",
+      "content": "ㄴㅇㄹㄴㅇㄹ",
       "desc": "행복한 휴가를 떠난 5명의 여행객.그러나 우연히 상어에 의해 훼손된 시체를 발견하고그들의 여행은 순...",
-      "picture": "https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "5"
+      "picture": "",
+      "star": "2"
     },
     {
       "id": "9",
@@ -201,5 +201,26 @@
       "star": "4"
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "reviewsId": "9",
+      "comment": "test",
+      "id": "4"
+    },
+    {
+      "reviewsId": "9",
+      "comment": "해치웠나",
+      "id": "5"
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지test",
+      "id": "IDSf6RW"
+    },
+    {
+      "reviewsId": "9",
+      "comment": "sdfsdf댓글달아보시지",
+      "id": "dlFdqt1"
+    }
+  ]
 }

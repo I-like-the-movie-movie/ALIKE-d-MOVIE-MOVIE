@@ -20,7 +20,6 @@ export const __deleteReviews = createAsyncThunk('reviews/deleteReviews', async (
   try {
     const data = await axios.delete(`http://localhost:3001/reviews/${payload}`);
     console.log('deletetest');
-
     return thunkAPI.fulfillWithValue(payload);
   } catch (error) {
     return thunkAPI.rejectWithValue(error);
@@ -36,14 +35,14 @@ export const __getReviews = createAsyncThunk('reviews/getReviews', async (payloa
   }
 });
 
-export const __putReviews = createAsyncThunk('reviews/putReviews', async (payload, thunkAPI) => {
+export const __patchReviews = createAsyncThunk('reviews/patchReviews', async (payload, thunkAPI) => {
   try {
-    const data = await axios.put('http://localhost:3001/reviews');
+    const data = await axios.patch(`http://localhost:3001/reviews/${payload.id}`, payload);
     return thunkAPI.fulfillWithValue(data.data);
   } catch (error) {
     return thunkAPI.rejectWithValue(error);
   }
-});
+}); //put del id를 특정
 
 export const reviewsSlice = createSlice({
   name: 'reviews',
@@ -67,6 +66,11 @@ export const reviewsSlice = createSlice({
     },
   },
 });
+
+// // 액션크리에이터는 컴포넌트에서 사용하기 위해 export 하고
+// export const { addNumber, minusNumber } = reviewSlice.actions;
+// // reducer 는 configStore에 등록하기 위해 export default 합니다.
+// export default reviewSlice.reducer;
 
 export const {} = reviewsSlice.actions;
 export default reviewsSlice.reducer;
