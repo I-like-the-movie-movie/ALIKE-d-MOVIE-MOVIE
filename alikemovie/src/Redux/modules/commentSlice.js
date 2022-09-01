@@ -1,17 +1,26 @@
-import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
+import axios from "axios";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+
+const url2 = `http://localhost:3001/comments`
+
 
 const initialState = {
-  reviews: [],
+  comments: [],
   isLoading: false,
   error: null,
+
 };
-export const __postReviews = createAsyncThunk(
-  "reviews/postReviews",
+export const __postComments = createAsyncThunk(
+  "comments/postComments",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.post("http://localhost:3001/reviews");
+      // const data = await axios.post("http://localhost:3001/comments");
+    
+      const data = await axios.post(url2,{
+        reviewsId:payload.reviewsId,
+        comment: payload.comment,
+      })
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -21,41 +30,17 @@ export const __postReviews = createAsyncThunk(
   }
 );
 
-<<<<<<< HEAD
-export const __getReviews = createAsyncThunk('reviews/getReviews', async (payload, thunkAPI) => {
-  try {
-    const data = await axios.get('http://localhost:3001/reviews');
-    return data.data;
-  } catch (error) {
-    console.log(error);
-    return thunkAPI.rejectWithValue(error);
-  }
-});
-
-export const reviewsSlice = createSlice({
-  name: 'reviews',
-  initialState,
-  reducers: {},
-  extraReducers: {
-    [__getReviews.pending]: state => {
-      state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
-    },
-    [__getReviews.fulfilled]: (state, action) => {
-      state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
-      state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
-    },
-    [__getReviews.rejected]: (state, action) => {
-      state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
-      state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
-    },
-=======
-export const __getReviews = createAsyncThunk(
-  "reviews/getReviews",
+export const __getComments = createAsyncThunk(
+  "reviews/getComments",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.get("http://localhost:3001/reviews");
+      // const data = await axios.get("http://localhost:3001/comments");
+      // const data = await axios.get(`${url2}+?reviewId=${payload}`);
+      const data = await axios.get(`${url2}/${payload}`);
+      // /comments 앞에부분 변수 할당해서 코드 줄이는 방법도 있음
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
+      // console.log(data);
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue(error);
@@ -92,35 +77,34 @@ export const __getReviews = createAsyncThunk(
 // );
 
 
-export const reviewsSlice = createSlice({
-  name: "reviews",
+export const commentsSlice = createSlice({
+  name: "comments",
   initialState,
   reducers: {},
   extraReducers: {
-      [__getReviews.pending]: (state) => {
+      [__getComments.pending]: (state) => {
         state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
       },
-      [__getReviews.fulfilled]: (state, action) => {
+      [__getComments.fulfilled]: (state, action) => {
         state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
         state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
       },
-      [__getReviews.rejected]: (state, action) => {
+      [__getComments.rejected]: (state, action) => {
         state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
         state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
       },
-      [__postReviews.pending]: (state) => {
+      [__postComments.pending]: (state) => {
         state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
       },
-      [__postReviews.fulfilled]: (state, action) => {
+      [__postComments.fulfilled]: (state, action) => {
         state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
         state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
       },
-      [__postReviews.rejected]: (state, action) => {
+      [__postComments.rejected]: (state, action) => {
         state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
         state.error = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
       },
 
->>>>>>> 517e5c972437189ce8d5df653a099996af467b90
   },
 });
 
@@ -129,5 +113,5 @@ export const reviewsSlice = createSlice({
 // // reducer 는 configStore에 등록하기 위해 export default 합니다.
 // export default reviewSlice.reducer;
 
-export const {} = reviewsSlice.actions;
-export default reviewsSlice.reducer;
+export const {} = commentsSlice.actions;
+export default commentsSlice.reducer;
