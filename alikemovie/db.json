@@ -164,8 +164,18 @@
   "comments": [
     {
       "reviewsId": "9",
-      "comment": "ㄴㅇㄹㄴㅁㄹㄴㅇㄹㄴㅇㄹ",
-      "id": 1
+      "comment": "sdfsdfsdf",
+      "id": 2
+    },
+    {
+      "reviewsId": "10",
+      "comment": "test",
+      "id": 3
+    },
+    {
+      "reviewsId": "9",
+      "comment": "test111",
+      "id": 5
     }
   ]
 }

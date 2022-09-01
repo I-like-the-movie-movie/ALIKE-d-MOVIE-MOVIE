@@ -35,10 +35,11 @@ export const __getComments = createAsyncThunk(
   "comments/getComments",
   async (payload, thunkAPI) => {
     try {
+      console.log(payload,1)
       // const data = await axios.get("http://localhost:3001/comments");
       // const data = await axios.get(`${url2}+?reviewId=${payload}`);
+      // const data = await axios.get(url2);
       const data = await axios.get(url2);
-      // const data = await axios.get(url2+"/"+payload);
 
       // /comments 앞에부분 변수 할당해서 코드 줄이는 방법도 있음
       console.log(data);
@@ -56,7 +57,7 @@ export const __deleteComments = createAsyncThunk(
   "comments/deleteComments",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.delete(url2);
+      const data = await axios.delete(`${url2}/${payload}`);
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
       // console.log(data);

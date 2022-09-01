@@ -2,6 +2,8 @@
 // import styled from "styled-components";
 // import { useNavigate } from "react-router-dom";
 
+      // url/comment/게시물ID/댓글ID
+
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,14 +46,14 @@ const Review = () => {
     navigate(`/put/${movieID}`);
   };
 
-  // const onClickDeleteCommentHandler = (commentID) => {
-  //   console.log(commentID);
-  //   // 1부터 14까지
-  //   dispatch(__deleteComments((commentID)))
-  //   // alert("삭제가 완료되었습니다!");
-  //   // navigate(`/put/${commentID}`);
-  // }; 
-  
+  const onClickDeleteCommentHandler = (commentID) => {
+    console.log(commentID.target.id);
+    // 1부터 14까지
+    dispatch(__deleteComments(commentID.target.id))
+    // alert("삭제가 완료되었습니다!");
+    // navigate(`/put/${commentID}`);
+  }; 
+
 
   const addComment = (e) => {
     e.preventDefault();
@@ -63,7 +65,8 @@ const Review = () => {
         reviewsId: params.id,
         comment: comment,
       })
-      
+
+
     );
     setComment("");
     // window.location.reload();
@@ -78,19 +81,20 @@ const Review = () => {
   };
   useEffect(() => {
     dispatch(__getReviews());
-    dispatch(__getComments());
+    dispatch(__getComments(id));
     // dispatch(__deleteComments());
   }, [dispatch]);
 
   let params = useParams();
   const reviews = useSelector((state) => state.reviews.reviews);
-  const comments = useSelector((state) => state.comments);
+  const comments = useSelector((state) => state.comments.comments);
+  console.log(reviews)  
   console.log(comments)
-  console.log(comments.coments)
+  // console.log(comments.comments.comments)
 
   const filteredComments = comments.filter((el)=> el.reviewsId === id );
 
-  // console.log(filteredComments)
+  console.log(filteredComments)
   
   return (
     <div>
@@ -162,9 +166,9 @@ const Review = () => {
             (comment) => (
               <div key={comment.id}>
               <p>{comment.comment}</p>
-              {/* <button onClick={onClickDeleteCommentHandler(comment.id)}>
+              <button id={comment.id} onClick={onClickDeleteCommentHandler}>
                 댓글del
-              </button> */}
+              </button>
               <button >
                 댓글put
               </button>
