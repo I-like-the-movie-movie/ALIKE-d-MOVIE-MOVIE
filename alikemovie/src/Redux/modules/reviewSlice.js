@@ -1,24 +1,43 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+<<<<<<< HEAD
 import { useDispatch } from 'react-redux';
+=======
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
 
 const initialState = {
   reviews: [],
   isLoading: false,
   error: null,
 };
-export const __postReviews = createAsyncThunk(
-  "reviews/postReviews",
-  async (payload, thunkAPI) => {
-    try {
-      const data = await axios.post("http://localhost:3001/reviews");
-      console.log(data);
-      return thunkAPI.fulfillWithValue(data.data);
-    } catch (error) {
-      console.log(error);
-      return thunkAPI.rejectWithValue(error);
-    }
+
+export const __postReviews = createAsyncThunk('reviews/postReviews', async (payload, thunkAPI) => {
+  try {
+    const data = await axios.post('http://localhost:3001/reviews', payload);
+    return thunkAPI.fulfillWithValue(data.data);
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
   }
+});
+
+export const __deleteReviews = createAsyncThunk('reviews/deleteReviews', async (payload, thunkAPI) => {
+  try {
+    const data = await axios.delete(`http://localhost:3001/reviews/${payload}`);
+    console.log('deletetest');
+    return thunkAPI.fulfillWithValue(payload);
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
+export const __getReviews = createAsyncThunk('reviews/getReviews', async (payload, thunkAPI) => {
+  try {
+    const data = await axios.get('http://localhost:3001/reviews');
+    return thunkAPI.fulfillWithValue(data.data);
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+<<<<<<< HEAD
 );
 
 <<<<<<< HEAD
@@ -91,12 +110,25 @@ export const __getReviews = createAsyncThunk(
 //   }
 // );
 
+=======
+});
+
+export const __patchReviews = createAsyncThunk('reviews/patchReviews', async (payload, thunkAPI) => {
+  try {
+    const data = await axios.patch(`http://localhost:3001/reviews/${payload.id}`, payload);
+    return thunkAPI.fulfillWithValue(data.data);
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+}); //put del id를 특정
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
 
 export const reviewsSlice = createSlice({
-  name: "reviews",
+  name: 'reviews',
   initialState,
   reducers: {},
   extraReducers: {
+<<<<<<< HEAD
       [__getReviews.pending]: (state) => {
         state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
       },
@@ -121,6 +153,23 @@ export const reviewsSlice = createSlice({
       },
 
 >>>>>>> 517e5c972437189ce8d5df653a099996af467b90
+=======
+    [__getReviews.pending]: state => {
+      state.isLoading = true;
+    },
+    [__getReviews.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.reviews = action.payload;
+    },
+    [__getReviews.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    [__postReviews.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.reviews.push(action.payload);
+    },
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
   },
 });
 

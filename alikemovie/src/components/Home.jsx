@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import Logo from "../assets/logo.svg";
+<<<<<<< HEAD
 // import ModalReview from './Modals/ModalReview';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -59,6 +60,13 @@ const Home = () => {
   //   fetchReviews();
   // }, []);
 
+=======
+import styled from "styled-components";
+
+const Home = () => {
+  const navigate = useNavigate();
+
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
   return (
     <>
 <<<<<<< HEAD
@@ -67,13 +75,16 @@ const Home = () => {
 >>>>>>> 517e5c972437189ce8d5df653a099996af467b90
       <div className="home_wrap">
         <img className="logo" src={Logo} alt="로고" />
-
         <div className="list_button">
           <button
             className="now_movie_list"
             onClick={() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
               navigate("/list2");
+=======
+              navigate("/list");
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
             }}
           >
 =======
@@ -93,13 +104,12 @@ const Home = () => {
 >>>>>>> 517e5c972437189ce8d5df653a099996af467b90
             지금까지의 영화들
           </button>
-
           <button
 <<<<<<< HEAD
 <<<<<<< HEAD
             className="review_list"
             onClick={() => {
-              navigate("/post2");
+              navigate("/post");
             }}
           >
 =======

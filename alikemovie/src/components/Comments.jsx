@@ -1,3 +1,4 @@
+<<<<<<< HEAD:alikemovie/src/components/Post2.jsx
 <<<<<<< HEAD
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -23,20 +24,25 @@ import { reviewsSlice } from "../Redux/modules/reviewSlice";
 import { __getReviews } from "../Redux/modules/reviewSlice";
 
 
+=======
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e:alikemovie/src/components/Comments.jsx
 
-function Post2() {
+function Comments() {
   const [review, setReview] = useState({
-    movie_title: "",
+    movie_title: '',
   });
   const [reviews, setReviews] = useState(null);
 
   const fetchReviews = async () => {
-    const { data } = await axios.get("http://localhost:3001/reviews");
+    const { data } = await axios.get('http://localhost:3001/reviews');
     setReviews(data);
   };
 
-  const onSubmitHandler = (review) => {
-    axios.post("http://localhost:3001/reviews", review);
+  const onSubmitHandler = review => {
+    axios.post('http://localhost:3001/reviews', review);
   };
 
   useEffect(() => {
@@ -46,17 +52,16 @@ function Post2() {
   return (
     <Body>
       <Divleft
-        onSubmit={(e) => {
+        onSubmit={e => {
           // 👇 submit했을 때 브라우저의 새로고침을 방지합니다.
           // e.preventDefault();
           onSubmitHandler(review);
-        }}
-      >
+        }}>
         <p>
           <h1>title</h1>
           <input
-            type="text"
-            onChange={(ev) => {
+            type='text'
+            onChange={ev => {
               const { value } = ev.target;
               setReview({
                 ...review,
@@ -68,8 +73,8 @@ function Post2() {
         <p>
           <h1> star </h1>
           <input
-            type="text"
-            onChange={(ev) => {
+            type='text'
+            onChange={ev => {
               const { value } = ev.target;
               setReview({
                 ...review,
@@ -81,8 +86,8 @@ function Post2() {
         <p>
           <h1>contents</h1>
           <Textarea
-            type="text"
-            onChange={(ev) => {
+            type='text'
+            onChange={ev => {
               const { value } = ev.target;
               setReview({
                 ...review,
@@ -98,14 +103,14 @@ function Post2() {
       <Divright>
         <p>
           <h1> image </h1>
-          <input type="file" accept="image/*"></input>
+          <input type='file' accept='image/*'></input>
           <Preimg></Preimg>
         </p>
       </Divright>
       <Divfoot>
         <h1>post2</h1>
         <div>
-          {reviews?.map((review) => (
+          {reviews?.map(review => (
             <div key={review.id}>{review.movie_title}</div>
           ))}
         </div>
@@ -114,6 +119,7 @@ function Post2() {
   );
 }
 
+<<<<<<< HEAD:alikemovie/src/components/Post2.jsx
 const Body = styled.div`
   border: 1px solid blue;
   display: inline-block;
@@ -162,3 +168,6 @@ const Divfoot = styled.div`
 
 >>>>>>> 517e5c972437189ce8d5df653a099996af467b90
 export default Post2;
+=======
+export default Comments;
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e:alikemovie/src/components/Comments.jsx

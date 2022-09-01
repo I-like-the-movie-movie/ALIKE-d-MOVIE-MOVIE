@@ -1,13 +1,15 @@
 {
   "reviews": [
     {
-      "id": 1,
-      "movie_title": "결백",
-      "picture": "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/react-02/film-reviews/5f2ad6df-2660-4b41-ad8b-df218a404346.jpg",
-      "star": 2,
-      "content": "유명 로펌의 에이스 변호사 ‘정인(신혜선)’은 아빠의 장례식장에서 농약 막걸리 살인사건이 일어났음을 알게 된다. 치매에 걸린 엄마 ‘화자(배종옥)’가 용의자로 지목되고, 그녀의 결백을 주장하기 위해 고향으로 내려가 직접 변호를 맡는다. 사건을 추적하던 중 시장 ‘추인회(허준호)’를 중심으로 한 마을 사람들의 조직적 은폐와 거짓 진술 등 수상한 정황을 포착한 ‘정인’. 그날의 기억을 모두 잃은 ‘화자’의 결백을 입증하기 위해 모든 사람들과 맞서기 시작하는데…! 파헤칠수록 커지는 의혹, 과연 진실은 무엇인가?"
+      "id": "1",
+      "movie_title": "모가디슈",
+      "content": "돈 값한다.억지로 짜내는 신파가 없어서 담백하고 좋았음",
+      "desc": "내전으로 고립된 낯선 도시, 모가디슈지금부터 우리의 목표는 오로지 생존이다!대한민국이 UN가입을 위...",
+      "picture": "https://movie-phinf.pstatic.net/20210728_297/1627455490166xkeCf_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
     },
     {
+<<<<<<< HEAD
       "id": 2,
       "movie_title": "사라진 시간",
       "picture": "https://learn-codeit-kr-static.s3.ap-northeast-2.amazonaws.com/react-02/film-reviews/6793de89-46d8-4147-8e80-015411e19246.jpg",
@@ -15,14 +17,25 @@
       "content": "한적한 소도시의 시골마을, 남들에게 숨기고 싶은 비밀을 지닌 채 지방 근무를 자청한 교사 부부에게 예기치 않은 불행이 닥치고,  사건 수사를 담당하게 된 형구는 마을 사람들의 수상한 낌새를 눈치채고 단서를 추적한다.  사건해결에 자신만만하던 형구는 수사과정에서 하루 아침에 자신의 삶이 송두리째 뒤바뀌는 충격적인 상황에 빠지게 된다.  집도, 가족도, 직업도 내가 알던 모든 것이 사라졌다. 과연 그는 자신의 삶을 되찾을 수 있을 것인가."
 <<<<<<< HEAD
 =======
+=======
+      "id": "2",
+      "movie_title": "프리 가이",
+      "content": "이거볼까요?싱크홀볼까요?공감 이거 비공 싱크홀 해주세여",
+      "desc": "평범한 직장, 절친 그리고 한 잔의 커피. 평화로운 일상 속 때론 총격전과 날강도가 나타나는 버라이어...",
+      "picture": "https://movie-phinf.pstatic.net/20210721_243/1626844891093xnPK1_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
     },
     {
-      "movie_title": "한산",
-      "star": "5",
-      "content": "킹갓제네럴엠페러이순신",
-      "id": 3
+      "id": "3",
+      "movie_title": "보스 베이비 2",
+      "content": "가볍게 보러갔다가 감동까지 느끼고 옵니다올해 봤던 애니메이션 중에 제일 재밌게 봤네요",
+      "desc": "베이비 주식회사의 레전드 보스 베이비에서 인생 만렙 CEO가 된 ‘테드’.베이비인 줄 알았던 조카 ‘티...",
+      "picture": "https://movie-phinf.pstatic.net/20210622_174/1624324910624JhEq2_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "5"
     },
     {
+<<<<<<< HEAD
       "movie_title": "탑건",
       "star": "5",
       "content": "비행기가멋잇다\n톰크루즈가 잘생겻다",
@@ -37,14 +50,187 @@
     }
   ],
   "home": [
+=======
+      "id": "4",
+      "movie_title": "더 수어사이드 스쿼드",
+      "content": "사방에 또라이들 천지네ㅋㅋ",
+      "desc": "살고 싶다면 무조건 성공시켜라!최강 우주 빌런에 맞선, 자살특공대에게 맡겨진 ‘더’ 대책 없는 작전....",
+      "picture": "https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "5",
+      "movie_title": "test",
+      "content": "sdfsdf",
+      "desc": "미지의 세계 아마존에서 관광객들에게 최고의 스릴을 선사하는재치 넘치는 크루즈 선장 프랭크(드웨인 ...",
+      "picture": "",
+      "star": "3"
+    },
+    {
+      "id": "7",
+      "movie_title": "ㄴㅇㄹㄴㅇㄹ",
+      "content": "ㄴㅇㄹㄴㅇㄹ",
+      "desc": "행복한 휴가를 떠난 5명의 여행객.그러나 우연히 상어에 의해 훼손된 시체를 발견하고그들의 여행은 순...",
+      "picture": "",
+      "star": "2"
+    },
+    {
+      "id": "9",
+      "movie_title": "극장판 도라에몽: 진구의 신공룡",
+      "content": "도라에몽 팬으로써 피스케 (진구의 공룡대탐험 때 주인공) 나올때 울컥했다..",
+      "desc": "진구는 공룡 엑스포 화석 발굴 체험에서 발견한 화석을 공룡알이라고 굳게 믿는다.도라에몽의 비밀도구 ...",
+      "picture": "https://movie-phinf.pstatic.net/20210805_35/1628142193088hCOyc_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "5"
+    },
+    {
+      "id": "10",
+      "movie_title": "생각의 여름",
+      "content": "여름에 딱 맞는 청량한 영화였다. 마치 내 이야기인듯, 큰 응원을 받고 나온 기분이었다.",
+      "desc": "뒹굴뒹굴 무기력증에 빠진 시인 지망생 ‘현실’.공모전에 내야할 마지막 시가 데굴데굴 산으로 가자,새...",
+      "picture": "https://movie-phinf.pstatic.net/20210721_95/1626855805268YRF0d_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "11",
+      "movie_title": "블랙 위도우",
+      "content": "스칼렛 요한슨  고생했어요",
+      "desc": "어벤져스의 히어로 블랙 위도우, ‘나타샤 로마노프’ (스칼렛 요한슨)는자신의 과거와 연결된 레드룸의...",
+      "picture": "https://movie-phinf.pstatic.net/20210617_272/1623906098516QjpeS_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "5"
+    },
+    {
+      "id": "12",
+      "movie_title": "맹크",
+      "content": "배경지식이 없어 스토리의 몇몇부분은 따라가지 못한 점이 아쉽습니다. 영상이 흑백이라 지루할꺼 같은 우려와 다르게 특유의 유머가 전반적으로 깔려있어 재밌고, 배우들의 연기도 훌륭해 전반적으로 만족합니다.넷플릭스에 풀리면 한 번 더 꼼꼼히 보고싶네요.",
+      "desc": "냉소적이고 신랄한 사회 비평가이자 알코올 중독자인 시나리오 작가 허먼 J. 맹키위츠가 훗날 영화사에 ...",
+      "picture": "https://movie-phinf.pstatic.net/20201104_244/1604453688064YHNPF_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "13",
+      "movie_title": "우리는 매일매일",
+      "content": "과거의 한국여자가 불평등한건 백번 옳다고 생각하지만 현재의 한국에서의 여성은 전혀 불평등하지 않습니다",
+      "desc": "미투운동이 한창이던 어느 날, 옛 친구들이 떠올랐다90년대 말 함께 페미니즘을 외쳤던 친구들은 지금 ...",
+      "picture": "https://movie-phinf.pstatic.net/20210614_156/1623649784985R6zzJ_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "5"
+    },
+    {
+      "id": "14",
+      "movie_title": "잘리카투",
+      "content": "이번달에 본 영화중에 가장 강렬했고 사운드와 영상미가 꼭 극장에서 봐야하는 수준이에요",
+      "desc": "푸줏간(도축장)에서 도망친 물소가 온 마을을 헤집고 다닌다. 마을 남자들은 폭주하는 물소를 잡기 위해...",
+      "picture": "https://movie-phinf.pstatic.net/20210726_76/1627268183438g0c9i_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "15",
+      "movie_title": "우리, 둘",
+      "content": "퀴어 로맨스인줄로만 알고 봤는데 긴장감 있는 연출에 깜놀. 생각할 거리도 많고 이런 영화 좋아",
+      "desc": "아파트 복도를 사이에 두고 서로 맞은편에 살고 있는 니나와 마도.마냥 가까운 이웃처럼 보이지만 사실 ...",
+      "picture": "https://movie-phinf.pstatic.net/20210728_269/162746188898434IGq_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "16",
+      "movie_title": "피닉스",
+      "content": "로맨틱 스릴러인가?  이렇게 느슨한 템포로 몰입도 높은 영화 첨임",
+      "desc": "1945년 6월 아우슈비츠 생존자 넬리가 고향으로 돌아온다. 그녀의 얼굴은 심하게 훼손된 상태. 성형 수...",
+      "picture": "https://movie-phinf.pstatic.net/20210705_273/1625464181084sOca8_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "17",
+      "movie_title": "하이큐!! 땅 VS 하늘",
+      "content": "애들이 너무 예쁘고 영상 진짜 잘 뽑혔는데, 중간에 엔딩크레딧이 올라가서 정말 당황했었고 영화가 너무 짧은 느낌이 없잖아있었습니다. 하지만 진짜 좋았고 다음엔 더 길게 영화 내주시면 감사하겠습니다. 1시간 이상으로요.",
+      "desc": "전국 대회 출전을 향한 치열한 접전 끝에네코마, 후쿠로다니, 노헤비, 이타치야마 고교 배구팀이지역 대...",
+      "picture": "https://movie-phinf.pstatic.net/20210723_279/1627030886121u2QeP_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
+    {
+      "id": "18",
+      "movie_title": "꽃다발 같은 사랑을 했다",
+      "content": "제목 그대로 꽃다발 같은 사랑 이야기. 비록 시간이 지나 시들었어도 아름답게 풍성했던 꽃다발로 기억 될 그 시절. 엄청나게 달콤하면서도 지독하게 씁쓸했다. 여운이 오래 갈 것 같다.",
+      "desc": "“시작은 막차였다”집으로 가는 막차를 놓친 스물한 살 대학생 ’무기’와 ‘키누’는 첫차를 기다리며...",
+      "picture": "https://movie-phinf.pstatic.net/20210615_3/1623748505590DVbIq_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "19",
+      "movie_title": "홀리 모터스",
+      "content": "잘 모르는 전공의 박사학위 논문을 읽는 기분이었다. 뭔가 그럴듯하고 심도있다는 건 알겠는데 무슨소린지는 잘 모르겠어..",
+      "desc": "유능한 사업가 오스카(드니 라방)의 하루는 이른 아침, 고급 리무진 홀리 모터스에 오르면서 시작된다. ...",
+      "picture": "https://movie-phinf.pstatic.net/20130307_39/1362619012802pmflE_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "5"
+    },
+    {
+      "id": "20",
+      "movie_title": "와인 패밀리",
+      "content": "힐링이 절실한 코로나 시대에 추천할만한 영화…. 물량공세와 자극은 없지만 인간미와 가족애, 그리고 실패일 것 같았던 인생에서 내 신조를 지켜서 더 잘 살수 있다는 희망을 보여준다^^보고나면 기분좋아지는 영화!!",
+      "desc": "일만 하며 바쁘게 살아온 캐나다의 자동차 회사 CEO 마크.문득 남은 인생을 어떻게 살아야 할지 고민에 ...",
+      "picture": "https://movie-phinf.pstatic.net/20210609_210/1623214576414CO9Bm_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "21",
+      "movie_title": "암살자들",
+      "content": "빨갱이들은 이 영화를 싫어합니다",
+      "desc": "2017년 2월 13일, 말레이시아 쿠알라룸푸르 공항에서북한 김정은 위원장의 이복형 김정남이 피살당한다....",
+      "picture": "https://movie-phinf.pstatic.net/20210713_228/1626158996549xhb1z_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "22",
+      "movie_title": "랑종",
+      "content": "공포가 아니라 그냥 기괴함. 나중에가선 그 기괴함마저도 아이러니함. 페이크 다큐식 영화인데. 스토리의 흐름이나 구성에 정점이 없으니. 그냥 밍밍 합니다. 뭐 영화내에서도 계속 밍! 밍? 거리긴 하지만. 밍밍합니다.",
+      "desc": "태국 북동부 ‘이산’ 지역 낯선 시골 마을.집 안, 숲, 산, 나무, 논밭까지,이 곳의 사람들은모든 것에 ...",
+      "picture": "https://movie-phinf.pstatic.net/20210630_28/1625030138001Xq38w_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "3"
+    },
+    {
+      "id": "23",
+      "movie_title": "퐁네프의 연인들",
+      "content": "스토커 듣다가 궁금해서 봄 ㅋㅎ",
+      "desc": "파리 센느강의 아홉 번째 다리 퐁네프. 사랑을 잃고 거리를 방황하며 그림을 그리는 여자 ‘미셸’,폐쇄...",
+      "picture": "https://movie-phinf.pstatic.net/20141104_9/14150629820356f2NK_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "24",
+      "movie_title": "아이스 로드",
+      "content": "거티는 생 고생만 하다가 가네요 ㅠㅠ",
+      "desc": "캐나다 매니토바주,다이아몬드 광산 폭발 사고로 갱도에 매립된 26명의 광부들.이들을 구출할 유일한 방...",
+      "picture": "https://movie-phinf.pstatic.net/20210721_115/1626832082638hCp4s_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "25",
+      "movie_title": "노매드랜드",
+      "content": "왜 눈물이 나는지 모르겠지만 눈물이 났다",
+      "desc": "경제적 붕괴로 도시 전체가 무너진 후 홀로 남겨진 ‘펀’.(프란시스 맥도맨드)추억이 깃든 도시를 떠나...",
+      "picture": "https://movie-phinf.pstatic.net/20210325_116/16166363029599OMXS_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
+    },
+    {
+      "id": "26",
+      "movie_title": "나는 나대로 혼자서 간다",
+      "content": "누구나 나이들게 마련이고, 그런 누구에게나 존재하는, 하지만 다른 것들에 눌려 잘 보이지 않는 '눈부신 외로움'에 대한 조용한 헌사.",
+      "desc": "정략결혼을 피해 도망친 도쿄에서‘슈조’와 운명적 사랑에 빠진 ‘모모코’는오랜 시간 가족을 위한 삶...",
+      "picture": "https://movie-phinf.pstatic.net/20210629_142/1624943003859r8KML_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "5"
+    },
+    {
+      "id": "27",
+      "movie_title": "갈매기",
+      "content": "많은 여성들이 또 피해자들이겪고 있는 성폭력 문제에서소리내지 못하고 울고 있을수 있는데그렇게 고통받지 말고용기내라는 메세지가 오복을 통해전달 되는듯 하다.독립영화는 영화관에서 처음 봤는데좋았다.성폭력 장면이 없이영화가 줄거리를 다 표현하는것도신기했고 오복에게 나라면오복처럼 할수 있었을까?하고 생각하게 해서 나를 돌아보게도하고 마지막 장면 오복의 당당함을 보고 감동 받았음.",
+      "desc": "잘못은 그 새끼가 했는데, 나한테 가만히 있으란다한강에 배 한 번 지나간 게 뭔 대수냐고 그란다젊은 ...",
+      "picture": "https://movie-phinf.pstatic.net/20210714_292/162622480175929f7c_JPEG/movie_picture.jpg?type=m665_443_2",
+      "star": "4"
     }
   ],
   "comments": [
     {
+<<<<<<< HEAD
       "id": 1,
       "body": "some comment",
       "postId": 1
@@ -74,3 +260,26 @@
     "name": "typicode"
   }
 }
+=======
+      "reviewsId": "9",
+      "comment": "test",
+      "id": "4"
+    },
+    {
+      "reviewsId": "9",
+      "comment": "해치웠나",
+      "id": "5"
+    },
+    {
+      "reviewsId": "9",
+      "comment": "댓글달아보시지test",
+      "id": "IDSf6RW"
+    },
+    {
+      "reviewsId": "9",
+      "comment": "sdfsdf댓글달아보시지",
+      "id": "dlFdqt1"
+    }
+  ]
+}
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e

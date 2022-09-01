@@ -17,10 +17,18 @@ export const __postComments = createAsyncThunk(
     try {
       // const data = await axios.post("http://localhost:3001/comments");
     
+<<<<<<< HEAD
       const data = await axios.post(url2,{
         reviewsId:payload.reviewsId,
         comment: payload.comment,
       })
+=======
+      const data = await axios.post(url2,
+        payload
+        // reviewsId:payload.reviewsId,
+        // comment: payload.comment,
+      )
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (error) {
@@ -31,12 +39,22 @@ export const __postComments = createAsyncThunk(
 );
 
 export const __getComments = createAsyncThunk(
+<<<<<<< HEAD
   "reviews/getComments",
+=======
+  "comments/getComments",
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
   async (payload, thunkAPI) => {
     try {
       // const data = await axios.get("http://localhost:3001/comments");
       // const data = await axios.get(`${url2}+?reviewId=${payload}`);
+<<<<<<< HEAD
       const data = await axios.get(`${url2}/${payload}`);
+=======
+      const data = await axios.get(url2);
+      // const data = await axios.get(url2+"/"+payload);
+
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
       // /comments 앞에부분 변수 할당해서 코드 줄이는 방법도 있음
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
@@ -87,7 +105,11 @@ export const commentsSlice = createSlice({
       },
       [__getComments.fulfilled]: (state, action) => {
         state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
+<<<<<<< HEAD
         state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+=======
+        state.comments = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
       },
       [__getComments.rejected]: (state, action) => {
         state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
@@ -98,7 +120,11 @@ export const commentsSlice = createSlice({
       },
       [__postComments.fulfilled]: (state, action) => {
         state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
+<<<<<<< HEAD
         state.reviews = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+=======
+        state.comments = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
       },
       [__postComments.rejected]: (state, action) => {
         state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
@@ -114,4 +140,8 @@ export const commentsSlice = createSlice({
 // export default reviewSlice.reducer;
 
 export const {} = commentsSlice.actions;
+<<<<<<< HEAD
 export default commentsSlice.reducer;
+=======
+export default commentsSlice.reducer;
+>>>>>>> 19d3394ce136104f56033bbf09422ad8acc8913e
