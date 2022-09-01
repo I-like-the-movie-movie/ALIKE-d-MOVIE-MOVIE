@@ -5,7 +5,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { __deleteReviews, __getReviews } from "../Redux/modules/reviewSlice";
+import {
+  __deleteReviews,
+  __getReviews,
+  __putReviews,
+} from "../Redux/modules/reviewSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
@@ -16,8 +20,11 @@ const Review = () => {
   const onClickDeleteButtonHandler = (movieID) => {
     console.log(movieID);
     dispatch(__deleteReviews(movieID));
-    alert("삭제가 완료 되었습니다!");
     navigate("/list");
+  };
+  const onClickPutButtonHandler = (movieID) => {
+    console.log(movieID);
+    dispatch(__putReviews(movieID));
   };
 
   let params = useParams();
@@ -54,9 +61,9 @@ const Review = () => {
                 width="170"
                 height="200"
               />
-              <h1>title</h1>
+              <h2>title</h2>
               <p>{reviews.movie_title}</p>
-              <h1>star</h1>
+              <h2>star</h2>
               <p>{reviews.star}</p>
               <p>
                 {reviews.star === "1" ? (
@@ -73,12 +80,17 @@ const Review = () => {
                   reviews.star
                 )}
               </p>
-              <h1>description</h1>
+              <h2>description</h2>
               <p>{reviews.desc}</p>
-              <h1>content</h1>
+              <h2>content</h2>
               <p>{reviews.content}</p>
               <p>
-                <button>Put</button>{" "}
+                <button
+                  type="button"
+                  onClick={() => onClickPutButtonHandler(params.id)}
+                >
+                  Put
+                </button>{" "}
                 <button
                   type="button"
                   onClick={() => onClickDeleteButtonHandler(params.id)}

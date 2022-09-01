@@ -1,22 +1,6 @@
 {
   "reviews": [
     {
-      "id": "1",
-      "movie_title": "모가디슈",
-      "content": "돈 값한다.억지로 짜내는 신파가 없어서 담백하고 좋았음",
-      "desc": "내전으로 고립된 낯선 도시, 모가디슈지금부터 우리의 목표는 오로지 생존이다!대한민국이 UN가입을 위...",
-      "picture": "https://movie-phinf.pstatic.net/20210728_297/1627455490166xkeCf_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
-      "id": "2",
-      "movie_title": "프리 가이",
-      "content": "이거볼까요?싱크홀볼까요?공감 이거 비공 싱크홀 해주세여",
-      "desc": "평범한 직장, 절친 그리고 한 잔의 커피. 평화로운 일상 속 때론 총격전과 날강도가 나타나는 버라이어...",
-      "picture": "https://movie-phinf.pstatic.net/20210721_243/1626844891093xnPK1_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
-    },
-    {
       "id": "3",
       "movie_title": "보스 베이비 2",
       "content": "가볍게 보러갔다가 감동까지 느끼고 옵니다올해 봤던 애니메이션 중에 제일 재밌게 봤네요",

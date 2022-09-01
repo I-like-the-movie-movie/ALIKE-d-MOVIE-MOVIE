@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-const Lists = ({ id, movie_title, star, content, picture }) => {
+const Lists = ({ id, movie_title, star, picture }) => {
   const navigate = useNavigate();
 
   return (
     <Divbox>
       <div
         onClick={() => {
-          navigate(`/Review/${id}`);
+          navigate(`/review/${id}`);
         }}
       >
         <div>
           <img src={picture} alt="poster" width="170" height="200" />
         </div>
         <div>
-          <h1>title</h1>
+          <h2>title</h2>
           {movie_title}
-          <h1>star</h1>
+          <h2>star</h2>
           {star === "1" ? (
             <Star>⭐️</Star>
           ) : star === "2" ? (

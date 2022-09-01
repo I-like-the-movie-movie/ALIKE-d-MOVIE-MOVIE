@@ -8,6 +8,7 @@ import { nanoid } from "@reduxjs/toolkit";
 
 function Post() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const titleInput = useRef(null);
   const contentInput = useRef(null);
@@ -24,9 +25,8 @@ function Post() {
       content: contentInput.current.value,
     };
     dispatch(__postReviews(addPost));
+    navigate(`/`);
   };
-
-  const navigate = useNavigate();
 
   return (
     <Body>
@@ -50,11 +50,11 @@ function Post() {
         <h1> star </h1>
         <select name="star" ref={starInput}>
           <option>star</option>
-          <option value="1">★</option>
-          <option value="2">★★</option>
-          <option value="3">★★★</option>
-          <option value="4">★★★★</option>
-          <option value="5">★★★★★</option>
+          <option value="1">⭐️</option>
+          <option value="2">⭐️⭐️</option>
+          <option value="3">⭐️⭐️⭐️</option>
+          <option value="4">⭐️⭐️⭐️⭐️</option>
+          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
         </select>
 
         <h1>contents</h1>
