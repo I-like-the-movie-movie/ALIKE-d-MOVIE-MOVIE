@@ -1,32 +1,48 @@
-import React, { useRef } from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
-import { useDispatch } from "react-redux";
-import { __postReviews } from "../Redux/modules/reviewSlice";
+import styled from "styled-components";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import { nanoid } from "@reduxjs/toolkit";
+import {
+  __postReviews,
+  __getReviews,
+  __patchReviews,
+} from "../Redux/modules/reviewSlice";
 
-function Post() {
+function Put() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const titleInput = useRef(null);
   const contentInput = useRef(null);
   const pictureInput = useRef(null);
   const starInput = useRef(null);
 
+  const reviews = useSelector((state) => state.reviews.reviews);
+  let { id } = useParams();
+
+  console.log(reviews);
+  console.log(reviews[0].id);
+
+  useEffect(() => {
+    // dispatch(__deleteReviews())
+    dispatch(__getReviews());
+  }, []);
+
   const onClickHandler = (e) => {
     e.preventDefault();
-    const addPost = {
-      id: nanoid(),
+    const editPost = {
+      id,
       star: starInput.current.value,
       movie_title: titleInput.current.value,
-      picture: pictureInput.current.value,
+      // picture: pictureInput.current.value,
       content: contentInput.current.value,
     };
-    dispatch(__postReviews(addPost));
-    navigate(`/`);
+    console.log(editPost);
+    dispatch(__patchReviews(editPost));
   };
+
+  const navigate = useNavigate();
 
   return (
     <Body>
@@ -44,10 +60,10 @@ function Post() {
         </button>
       </header>
       <Divleft onSubmit={onClickHandler}>
-        <h1>title</h1>
-        <input ref={titleInput} type="text" />
+        <h2>title</h2>
+        <input ref={titleInput} type="text" placeholder="내용을 입력하세요." />
 
-        <h1> star </h1>
+        <h2> star </h2>
         <select name="star" ref={starInput}>
           <option>star</option>
           <option value="1">⭐️</option>
@@ -57,17 +73,16 @@ function Post() {
           <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
         </select>
 
-        <h1>contents</h1>
+        <h2>contents</h2>
         <Textarea ref={contentInput} type="text" />
-
         <Pspan>
-          <button>추가하기</button>
+          <button>수정하기</button>
         </Pspan>
       </Divleft>
       <Divright>
-        <h1> image </h1>
-        <input ref={pictureInput} type="file" accept="image/*"></input>
-        <Preimg></Preimg>
+        <h2> image </h2>
+        <input ref={pictureInput} type="text"></input>
+        {/* <Preimg></Preimg> */}
       </Divright>
       <Divfoot></Divfoot>
     </Body>
@@ -77,7 +92,6 @@ function Post() {
 const Body = styled.div`
   /* border: 1px solid; */
   display: inline-block;
-
   width: 100%;
   min-width: 450px;
   height: 100%;
@@ -107,10 +121,12 @@ const Textarea = styled.textarea`
   height: 60px;
   width: 95%;
 `;
+
 const Pspan = styled.p`
-  /* margin: 10%; */
+  margin: 10%;
   text-align: center;
 `;
+
 const Divright = styled.div`
   border: 1px solid;
   border-radius: 30px;
@@ -135,4 +151,4 @@ const Divfoot = styled.div`
   width: 92%;
 `;
 
-export default Post;
+export default Put;

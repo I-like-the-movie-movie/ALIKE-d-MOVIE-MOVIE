@@ -1,38 +1,47 @@
-// import Logo from "../assets/logo.svg";
-// import styled from "styled-components";
-// import { useNavigate } from "react-router-dom";
-
 import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  __deleteReviews,
-  __getReviews,
-  __putReviews,
-} from "../Redux/modules/reviewSlice";
-import { useNavigate, useParams } from "react-router-dom";
-import styled from "styled-components";
 import Logo from "../assets/logo.svg";
+import styled from "styled-components";
+
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { __getComments, __postComments } from "../Redux/modules/commentSlice";
+import {
+  __getReviews,
+  __patchReviews,
+  __deleteReviews,
+} from "../Redux/modules/reviewSlice";
 
 const Review = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [detailreviews, setDetailReviews] = useState(null);
+  const param = useParams();
+  const [comment, setComment] = useState("댓글달아보시지");
+  const { id } = useParams();
+  const paramsComment = parseInt(id);
+
   const onClickDeleteButtonHandler = (movieID) => {
-    console.log(movieID);
     dispatch(__deleteReviews(movieID));
+    alert("삭제가 완료 되었습니다!");
     navigate("/list");
   };
+
   const onClickPutButtonHandler = (movieID) => {
     console.log(movieID);
-    dispatch(__putReviews(movieID));
+    alert("내용을 수정해주세요!");
+    navigate("/put");
   };
 
   let params = useParams();
 
   const reviews = useSelector((state) => state.reviews.reviews);
+  const comments = useSelector((state) => state.comments.comments);
 
   useEffect(() => {
     dispatch(__getReviews());
+    dispatch(__getComments());
   }, [dispatch]);
 
   return (
@@ -90,7 +99,8 @@ const Review = () => {
                   onClick={() => onClickPutButtonHandler(params.id)}
                 >
                   Put
-                </button>{" "}
+                </button>
+
                 <button
                   type="button"
                   onClick={() => onClickDeleteButtonHandler(params.id)}
