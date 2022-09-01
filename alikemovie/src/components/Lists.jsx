@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Lists = ({ id, movie_title, star, content, picture }) => {
   const navigate = useNavigate();
@@ -10,32 +10,15 @@ const Lists = ({ id, movie_title, star, content, picture }) => {
       <div
         onClick={() => {
           navigate(`/Review/${id}`);
-        }}
-      >
+        }}>
         <div>
-<<<<<<< HEAD
-          <img src={picture} alt="poster" width="170" height="200" />
-=======
-          <img src={picture} alt="poster"/>
->>>>>>> 4be2f81fcde7b4e1b386b3e0db678d6b5245e92c
+          <img src={picture} alt='poster' />
         </div>
         <div>
           <h1>title</h1>
           {movie_title}
           <h1>star</h1>
-          {star === "1" ? (
-            <Star>⭐️</Star>
-          ) : star === "2" ? (
-            <Star>⭐️⭐️</Star>
-          ) : star === "3" ? (
-            <Star>⭐️⭐️⭐️</Star>
-          ) : star === "4" ? (
-            <Star>⭐️⭐️⭐️⭐️</Star>
-          ) : star === "5" ? (
-            <Star>⭐️⭐️⭐️⭐️⭐️</Star>
-          ) : (
-            star
-          )}
+          {star === '1' ? <Star>⭐️</Star> : star === '2' ? <Star>⭐️⭐️</Star> : star === '3' ? <Star>⭐️⭐️⭐️</Star> : star === '4' ? <Star>⭐️⭐️⭐️⭐️</Star> : star === '5' ? <Star>⭐️⭐️⭐️⭐️⭐️</Star> : star}
         </div>
       </div>
     </Divbox>
