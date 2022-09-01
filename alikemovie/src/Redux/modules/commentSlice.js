@@ -56,7 +56,7 @@ export const __deleteComments = createAsyncThunk(
   "comments/deleteComments",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.delete(url2+"/"+payload);
+      const data = await axios.delete(url2);
       console.log(data);
       return thunkAPI.fulfillWithValue(data.data);
       // console.log(data);

@@ -18,8 +18,8 @@ function Put() {
   const reviews = useSelector((state) => state.reviews.reviews);
   let {id} = useParams();
 
-  console.log(reviews)
-  console.log(reviews[0].id)
+  // console.log(reviews)
+  // console.log(reviews[0].id)
 
   useEffect(() => {
     // dispatch(__deleteReviews())
@@ -39,6 +39,10 @@ function Put() {
     };
     console.log(editPost)
     dispatch(__patchReviews(editPost));
+    // window.location.reload("/List");
+    // window.location.reload("/Review/${reviews.id}");
+
+
   };
 
   const navigate = useNavigate();

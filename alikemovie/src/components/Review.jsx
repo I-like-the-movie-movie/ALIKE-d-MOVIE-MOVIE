@@ -23,11 +23,13 @@ const Review = () => {
   const [detailreviews, setDetailReviews] = useState(null);
   const location = useLocation();
   const param = useParams();
-  const [comment, setComment] = useState("댓글달아보시지");
+  const [comment, setComment] = useState("");
   const { id } = useParams();
+
 
   console.log(typeof(id))
   const paramsComment = parseInt(id);
+  console.log(paramsComment)
   const onClickDeleteButtonHandler = (movieID) => {
     console.log(movieID);
     dispatch(__deleteReviews(movieID));
@@ -44,6 +46,7 @@ const Review = () => {
 
   // const onClickDeleteCommentHandler = (commentID) => {
   //   console.log(commentID);
+  //   // 1부터 14까지
   //   dispatch(__deleteComments((commentID)))
   //   // alert("삭제가 완료되었습니다!");
   //   // navigate(`/put/${commentID}`);
@@ -60,8 +63,10 @@ const Review = () => {
         reviewsId: params.id,
         comment: comment,
       })
+      
     );
     setComment("");
+    // window.location.reload();
     // navigate(`/`);
     // navigate(`/review/${Number(params.id)}`);
     // console.log(params.id)
@@ -79,8 +84,12 @@ const Review = () => {
 
   let params = useParams();
   const reviews = useSelector((state) => state.reviews.reviews);
-  const comments = useSelector((state) => state.comments.comments);
+  const comments = useSelector((state) => state.comments);
+  console.log(comments)
+  console.log(comments.coments)
+
   const filteredComments = comments.filter((el)=> el.reviewsId === id );
+
   // console.log(filteredComments)
   
   return (
@@ -154,10 +163,10 @@ const Review = () => {
               <div key={comment.id}>
               <p>{comment.comment}</p>
               {/* <button onClick={onClickDeleteCommentHandler(comment.id)}>
-                del
+                댓글del
               </button> */}
               <button >
-                put
+                댓글put
               </button>
 
               </div>

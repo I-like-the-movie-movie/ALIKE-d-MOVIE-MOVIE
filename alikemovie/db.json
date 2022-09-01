@@ -18,11 +18,11 @@
     },
     {
       "id": "10",
-      "movie_title": "생각의 여름",
-      "content": "여름에 딱 맞는 청량한 영화였다. 마치 내 이야기인듯, 큰 응원을 받고 나온 기분이었다.",
+      "movie_title": "ㅇㄹㄴㅇㄹ",
+      "content": "",
       "desc": "뒹굴뒹굴 무기력증에 빠진 시인 지망생 ‘현실’.공모전에 내야할 마지막 시가 데굴데굴 산으로 가자,새...",
       "picture": "https://movie-phinf.pstatic.net/20210721_95/1626855805268YRF0d_JPEG/movie_picture.jpg?type=m665_443_2",
-      "star": "4"
+      "star": "star"
     },
     {
       "id": "11",
@@ -164,73 +164,8 @@
   "comments": [
     {
       "reviewsId": "9",
-      "comment": "댓글달아보시지sdfsdfd",
+      "comment": "ㄴㅇㄹㄴㅁㄹㄴㅇㄹㄴㅇㄹ",
       "id": 1
-    },
-    {
-      "reviewsId": "9",
-      "comment": "11111111",
-      "id": 2
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지aaaaaa",
-      "id": 3
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 4
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지11222",
-      "id": 5
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지dddd",
-      "id": 6
-    },
-    {
-      "reviewsId": "9",
-      "comment": "sdfsdf댓글달아보시지",
-      "id": 7
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 8
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 9
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 10
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 11
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 12
-    },
-    {
-      "reviewsId": "9",
-      "comment": "aaaaaaa댓글달아보시지",
-      "id": 13
-    },
-    {
-      "reviewsId": "9",
-      "comment": "댓글달아보시지",
-      "id": 14
     }
   ]
 }
